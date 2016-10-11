@@ -1,21 +1,62 @@
 @charset "UTF-8";
 
-// @font-face {
-//     font-family: 'font';
-//     src: url('../fonts/fonr.woff') format('woff');
-//     font-weight: normal;
-//     font-style: normal;
-// }
+@font-face {
+    font-family: 'Gerbera';
+    src: url('../fonts/Gerbera-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gerbera';
+    src: url('../fonts/Gerbera-Medium.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gerbera';
+    src: url('../fonts/Gerbera-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gerbera';
+    src: url('../fonts/Gerbera.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('../fonts/PT_Sans-Web-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
-$mainFontFamily: Helvetica, sans-serif;
+@font-face {
+    font-family: 'Pribambas';
+    src: url('../fonts/Pribambas-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$sans: 'PT Sans';
+$pribambas: 'Pribambas';
+$gerbera: Gerbera;
+$mainFontFamily: $gerbera, Helvetica, sans-serif;
 
 //
 //colors
 //
 
+$blue: #0069b0;
+$pink: #f894bd;
+$green: #55bc4f;
+$yellow: #f9de38;
 
-$text: #1c1c1c;
+$text: $blue;
 
 //
 //medias

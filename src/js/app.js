@@ -22,12 +22,11 @@ export default (function (window, document, $){
 	})();
 
 	function scrollMeTo(){
-
 		
-		const $header = $('#header');
+		const $menu = $('#menu');
 		
 		$('.js-goto').on('click', function(e){
-			const paddingTop = $(window).width() > maxWidth ? $header.outerHeight() : 0;
+			const paddingTop = $(window).width() > maxWidth ? $menu.outerHeight() : 0;
 			const $target = $(this.href.replace( /^.*\#/, '#' ) );
 			
 			if ($target.length === 1) {
@@ -43,22 +42,28 @@ export default (function (window, document, $){
 	};
 
 	function header(){
-		const $header = $('header');
+		const $header = $('#header');
+		const $menu = $('#menu');
+		const $menuSection = $menu.find('.menu__section');
+
+		$menu.css('height', $menuSection.outerHeight());
+
+		console.log( $menuSection.height());
 
 
 		function fix(){
 			const scrollTop = $(window).scrollTop();
-			const showPosition = 200;
+			const showPosition = $header.outerHeight();
 
 			if ( scrollTop > 0 && scrollTop <= showPosition ){
-				$header.addClass('header--hidden');
-				$header.removeClass('header--scrolled');
+				$menu.addClass('menu--hidden');
+				$menu.removeClass('menu--scrolled');
 			}else if ( scrollTop > showPosition ){
-				$header.addClass('header--scrolled');
-				$header.removeClass('header--hidden');
+				$menu.addClass('menu--scrolled');
+				$menu.removeClass('menu--hidden');
 			}else{
-				$header.removeClass('header--scrolled');
-				$header.removeClass('header--hidden');
+				$menu.removeClass('menu--scrolled');
+				$menu.removeClass('menu--hidden');
 			}
 		}
 		fix();
@@ -80,7 +85,7 @@ export default (function (window, document, $){
 				var rectTop = Math.round(rect.top);
 				var rectBottom = Math.round(rect.bottom);
 
-				if (rectTop <= 50 && rectBottom / 2 <= winHeight ){
+				if (rectTop <= 60 && rectBottom / 2 <= winHeight ){
 					$menuHrefs.removeClass('active');
 					$menuHrefs.filter('[href="#' + sectionId + '"]').addClass('active');
 				}
@@ -153,6 +158,58 @@ export default (function (window, document, $){
 
 	}
 
+	function modals(){
+
+		const $html = $('.html');
+		const $modals = $('.modal');
+		const $modalClose = $('.js-modal-close');
+		const $modalOpen = $('.js-modal-open');
+		const $modalVideoOpen = $('.js-modal-video-open');
+		const $modalVideoFrame = $('#modal-video-frame');
+
+		const visibleClass = 'modal--visible';
+		const htmlClass = 'html--modal';
+
+		function show(id){			
+			$html.addClass(htmlClass);
+			$modals.filter(id).addClass(visibleClass);
+		}
+
+		function hide(){
+			$html.removeClass(htmlClass);
+			$modals.removeClass(visibleClass);
+		}
+
+		$modalClose.on('click', function(e){
+			e.preventDefault();
+			hide();
+		});
+
+		$modalOpen.on('click', function(e){
+			e.preventDefault();
+			
+			const id = $(this).attr('href');
+
+			show(id);
+		});
+
+		$modalVideoOpen.on('click', function(e){
+			e.preventDefault();
+			
+			const videoId = $(this).attr('href').match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+
+			if (!videoId){
+				return;
+			}
+
+			const embedUrl = 'https://www.youtube.com/embed/' + videoId[1] + '?autoplay=1';
+
+			$modalVideoFrame.attr('src', embedUrl);
+
+			show('#modal-video-player');
+		});
+	}
+
 	function init(){
 
 		if (!isMobile){
@@ -162,6 +219,7 @@ export default (function (window, document, $){
 		scrollMeTo();
 		menu();
 		form();
+		modals();
 	}
 
 	return {

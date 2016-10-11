@@ -11,22 +11,55 @@ $icon-home: x y offset_x offset_y width height total_width total_height image_pa
 At the bottom of this section, we provide information about the spritesheet itself
 $spritesheet: width height image $spritesheet-sprites;
 */
+$about-icon-name: 'about-icon';
+$about-icon-x: 107px;
+$about-icon-y: 0px;
+$about-icon-offset-x: -107px;
+$about-icon-offset-y: 0px;
+$about-icon-width: 89px;
+$about-icon-height: 90px;
+$about-icon-total-width: 196px;
+$about-icon-total-height: 161px;
+$about-icon-image: '../images/sprite.png';
+$about-icon: (107px, 0px, -107px, 0px, 89px, 90px, 196px, 161px, '../images/sprite.png', 'about-icon', );
+$close-name: 'close';
+$close-x: 148px;
+$close-y: 109px;
+$close-offset-x: -148px;
+$close-offset-y: -109px;
+$close-width: 20px;
+$close-height: 21px;
+$close-total-width: 196px;
+$close-total-height: 161px;
+$close-image: '../images/sprite.png';
+$close: (148px, 109px, -148px, -109px, 20px, 21px, 196px, 161px, '../images/sprite.png', 'close', );
 $logotype-name: 'logotype';
 $logotype-x: 0px;
-$logotype-y: 0px;
+$logotype-y: 109px;
 $logotype-offset-x: 0px;
-$logotype-offset-y: 0px;
+$logotype-offset-y: -109px;
 $logotype-width: 148px;
 $logotype-height: 52px;
-$logotype-total-width: 148px;
-$logotype-total-height: 52px;
+$logotype-total-width: 196px;
+$logotype-total-height: 161px;
 $logotype-image: '../images/sprite.png';
-$logotype: (0px, 0px, 0px, 0px, 148px, 52px, 148px, 52px, '../images/sprite.png', 'logotype', );
-$spritesheet-width: 148px;
-$spritesheet-height: 52px;
+$logotype: (0px, 109px, 0px, -109px, 148px, 52px, 196px, 161px, '../images/sprite.png', 'logotype', );
+$play-1-name: 'play-1';
+$play-1-x: 0px;
+$play-1-y: 0px;
+$play-1-offset-x: 0px;
+$play-1-offset-y: 0px;
+$play-1-width: 107px;
+$play-1-height: 109px;
+$play-1-total-width: 196px;
+$play-1-total-height: 161px;
+$play-1-image: '../images/sprite.png';
+$play-1: (0px, 0px, 0px, 0px, 107px, 109px, 196px, 161px, '../images/sprite.png', 'play-1', );
+$spritesheet-width: 196px;
+$spritesheet-height: 161px;
 $spritesheet-image: '../images/sprite.png';
-$spritesheet-sprites: ($logotype, );
-$spritesheet: (148px, 52px, '../images/sprite.png', $spritesheet-sprites, );
+$spritesheet-sprites: ($about-icon, $close, $logotype, $play-1, );
+$spritesheet: (196px, 161px, '../images/sprite.png', $spritesheet-sprites, );
 
 /*
 The provided mixins are intended to be used with the array-like variables

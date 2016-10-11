@@ -38,18 +38,40 @@
 		}
 	}
 
+	&--green{
+		background: $green;
+		color: #fff;
+		&:hover{
+			background: lighten($green, 5%);
+		}
+		&:active{
+			background: darken($green, 5%);
+		}
+	}
+
+	&--blue{
+		background: $blue;
+		color: #fff;
+		&:hover{
+			background: lighten($blue, 5%);
+		}
+		&:active{
+			background: darken($blue, 5%);
+		}
+	}
+
 	&--m{
-		border-radius: 8px;
-		font-weight: 700;
-		font-size: 12px;
-		padding: 8px 20px 8px;
+		border-radius: 4px;
+		font-weight: 600;
+		font-size: 24px;
+		padding: 12px 20px 15px;
 	}
 
 	&--l{
-		border-radius: 8px;
-		font-weight: 700;
-		font-size: 15px;
-		padding: 10px 20px 10px;
+		border-radius: 4px;
+		font-weight: 600;
+		font-size: 30px;
+		padding: 15px 20px 15px;
 	}
 
 	&--block{

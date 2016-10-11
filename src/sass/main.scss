@@ -21,7 +21,7 @@
 
 	&__wrap{
 		@include clearfix;
-		max-width: 1000px;
+		max-width: 1200px;
 		padding: 0 10px;
 		margin: auto;
 	}
@@ -29,8 +29,9 @@
 	&__title{
 		text-align: center;
 		margin: 0 0 40px;
-		font-weight: 700;
-		font-size: 36px;
+		font-size: 42px;
+		font-weight: 600;
+		//font-weight: 700;
 		line-height: (50/36);
 	}
 
@@ -39,4 +40,404 @@
 	}
 }
 
- 
+
+
+/* ==========================================================================
+ * header
+ * ========================================================================== */
+
+.header{
+	background: #57d4f2 url(../images/bg/header.jpg) 50% 0 no-repeat;
+	background-size: cover;
+	height: image-height('../assets/images/bg/header.jpg');
+}
+
+/* ==========================================================================
+ * menu
+ * ========================================================================== */
+
+.menu{
+
+	&--scrolled{
+		.menu__section{
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 500;
+		}
+	}
+
+	&__section{
+		padding: 16px 0 16px;
+
+		background: $blue;
+		border-top: 4px solid $pink;
+		color: #fff;	
+	}
+
+	&__list{
+		margin: 0 0 -20px;
+		text-align: center;
+		font-size: 18px;
+		font-family: $sans;
+	}
+
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 12px 20px 12px;
+		&:first-child{
+			//margin-left: 0;
+		}
+	}
+
+	&__href{
+		text-transform: uppercase;
+		&:hover,
+		&.active{
+			opacity: .5;
+		}
+	}
+}
+
+/* ==========================================================================
+ * check
+ * ========================================================================== */
+
+.check{
+
+	background: #caf0ff;
+
+	&__title{
+		
+	}
+
+	&__list{
+		text-align: center;
+		margin: 0 -1% -30px;
+	}
+	
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		width: 25%;
+		margin: 0 1% 30px;
+		
+		&:before{
+			content: '';
+			display: block;
+			margin: 0 auto 20px;
+		}
+	
+	}
+}
+
+.check-item{
+
+	&__href{
+		display: block;
+
+		&:hover{
+			.check-item{
+				&__text{
+					border-color: transparent;
+				}
+			}
+		}
+	}
+
+	&__image-placeholder{
+		display: block;
+		margin: 0 auto 15px;
+		border-radius: 50%;
+		width: 207px;
+		height: 207px;
+		background: #fff;
+		padding: 20px;
+
+		box-shadow: 0 3px 0 #61bade,
+					0 3px 16px #6bafca;
+
+	}
+
+	&__image-border{
+		display: block;
+		width: 167px;
+		height: 167px;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	&__text{
+		font-size: 20px;
+		font-weight: 600;
+		color: #009ddc;
+		border-bottom: 1px solid;
+
+		transition: all .2s;
+	}
+}
+
+
+.how-many{
+	background: #a3dbf1 url(../images/bg/pattern.png) 0 0 repeat;
+	position: relative;
+	min-height: 650px;
+	padding: 124px 0 100px;
+
+	&__image-placeholder{
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		margin-left: -580px;
+	}
+
+	&__image{
+		display: block;
+	}
+
+	&__content{
+		margin: 0 0 0 600px;
+	}
+
+	&__title{
+		text-align: left;
+		margin: 0 0 20px;
+	}
+
+	&__text{
+		max-width: 535px;
+		margin: 0 0 30px;
+		font-size: 20px;
+	}
+}
+
+/* ==========================================================================
+ * reasons
+ * ========================================================================== */
+
+.reasons{
+	background: url(../images/bg/reasons.png) 50% 0 no-repeat;
+	height: image-height('../assets/images/bg/reasons.png');
+	margin: -40px 0 0;
+	position: relative;
+
+	&__content{
+		margin: 220px 0 0 540px;
+	}
+
+	&__button{
+		min-width: 200px;
+	}
+}
+
+
+/* ==========================================================================
+ * videos
+ * ========================================================================== */
+
+.videos{
+	background: #0061a6 url(../images/bg/pattern2.png) 0 0 repeat;
+	color: #fff;
+
+	&__list{
+		text-align: center;
+		margin: 0 -3% -30px;
+	}
+	
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		width: 30%;
+		margin: 0 1% 30px;
+		
+		&:before{
+			content: '';
+			display: block;
+			margin: 0 auto 20px;
+		}
+	
+	}
+}
+
+.videos-item{
+	text-align: center;
+
+	&__href{
+		display: block;
+
+		&:hover{
+			.videos-item{
+				&__image-placeholder:before{
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&__image-placeholder{
+		display: block;
+		margin: 0 0 20px;
+		position: relative;
+
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			@include sprite($play-1);
+			
+			opacity: .9;
+			transition: all .2s;
+		}
+	}
+
+	&__title{
+		font-family: $pribambas;
+		color: $yellow;
+		font-size: 36px;
+		display: block;
+		margin: 0 0 0px;
+	}
+
+	&__text{
+		font-size: 20px;
+		font-weight: 300;
+	}
+}
+
+
+/* ==========================================================================
+ * about
+ * ========================================================================== */
+
+.about{
+	background: #004e84;
+	color: #fff;
+
+	&__title{
+
+		&:after{
+			content: '';
+			display: block;
+			margin: 15px auto 0;
+			@include sprite($about-icon);
+		}
+
+	}
+
+	&__text{
+		text-align: center;
+		margin: 0 auto 45px;
+		max-width: 820px;
+	}
+
+	&__bottle{
+		width: 1140px;
+		margin: -50px auto 0;
+	}
+}
+
+.about-bottle{
+	background: url(../images/bg/about-bottle.png) 0 0 no-repeat;
+	min-height: image-height('../assets/images/bg/about-bottle.png');
+	padding: 125px 0 0 620px;
+
+	&__list{
+		
+	}
+
+	&__item{
+		min-height: 220px;
+		margin: 0 0 10px;
+	}
+
+	&__{
+		
+	}
+}
+
+.about-bottle-item{
+
+	&__title{
+		font-size: 24px;
+		font-weight: 700;
+		margin: 0 0 5px;
+	}
+
+	&__text{
+	
+		width: 430px;
+	}
+}
+
+
+/* ==========================================================================
+ * modal
+ * ========================================================================== */
+
+.modal{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	padding: 10%;
+
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+
+	opacity: 0;
+	visibility: hidden;
+
+	&--visible{
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&__bg{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0,0,0,.5);
+	}
+
+	&__content{
+		max-width: 760px;
+		margin: auto;
+		position: relative;
+		background: #fff;
+		border-radius: 5px;
+	}
+
+	&__close{
+		position: absolute;
+		top: 0;
+		left: 100%;
+		margin: 0 0 0 5px;
+		background-color: transparent;
+		text-indent: -9999px;
+		@include sprite($close);
+	}
+}
+
+.modal-video{
+	background: transparent;
+
+	&__frame-palceholder{
+		
+	}
+
+	&__frame{
+		
+	}
+}
