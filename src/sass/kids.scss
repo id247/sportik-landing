@@ -250,9 +250,10 @@
 }
 
 .your-bottle-bag{
-	background: url(../images/bottles/bag.png) 50% 0 no-repeat;
 	height: image-height('../assets/images/bottles/bag.png');
 	padding: 200px 0 0;
+	position: relative;
+
 	&__content{
 		margin: 0px 0 0 760px;
 	}
@@ -265,6 +266,19 @@
 
 	&__text{
 		
+	}
+
+	&__bag{
+		content: '';
+		background: url(../images/bottles/bag.png) 50% 0 no-repeat;
+		width: image-width('../assets/images/bottles/bag.png');
+		height: image-height('../assets/images/bottles/bag.png');
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
 	}
 }
 
