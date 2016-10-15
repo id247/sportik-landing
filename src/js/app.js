@@ -339,6 +339,78 @@ export default (function (window, document, $){
 		});
 	}	
 
+	function quiz(){
+
+		const $quiz = $('#quiz');
+
+		if (!$quiz){
+			return;
+		}
+
+		let currentQuestion = 0;
+
+		const $boxes = $quiz.find('.js-quiz-box');
+		const $nextQuestionButton = $quiz.find('.js-next-question');
+		const $select = $quiz.find('.js-select');
+		const $resultBottles = $quiz.find('.js-result-bottles');
+		const $resultBottlesCount = $quiz.find('.js-result-bottles-count');
+		const resultBottleHtml = $resultBottles.html();
+
+		function render(){
+			$boxes.hide().eq(currentQuestion).show();
+		}
+
+		function nextQuestion(){
+
+			if (currentQuestion === $boxes.length - 1){
+				currentQuestion = 1;
+			}else{
+				currentQuestion++;
+			}		
+
+			if (currentQuestion === $boxes.length - 2 ){
+				results();
+			}
+
+			render();
+		}
+
+		function results(){
+			const $radios = $quiz.find('input[type="radio"]:checked');
+
+			let count = 0;
+			let html = '';
+
+			$radios.each(function(){
+				count += parseInt(this.value);
+			});
+
+			for (let i = 0; i < count ; i++){
+				html += resultBottleHtml;
+			}
+
+			$resultBottles.html(html);
+			$resultBottlesCount.html(count);
+
+		}
+
+		$nextQuestionButton.on('click', function(e){
+			e.preventDefault();
+
+			nextQuestion();
+		});
+
+		$select.on('change', function(e){			
+
+			if (this.value !== ''){
+				$(this).parents('.js-quiz-box').find('.js-next-question').attr('disabled', false);
+			}else{
+				$(this).parents('.js-quiz-box').find('.js-next-question').attr('disabled', true);
+			}
+		});
+
+	}
+
 
 	function init(){
 
@@ -352,6 +424,7 @@ export default (function (window, document, $){
 		modals();
 
 		important();
+		quiz();
 	}
 
 	return {

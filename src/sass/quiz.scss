@@ -1,0 +1,283 @@
+/* ==========================================================================
+ * quiz
+ * ========================================================================== */
+
+.quiz{
+	//min-height: 730px;
+	
+
+	
+	padding: 50px 0 165px;
+
+	&:after{
+		content: url(../images/quiz/road.png);
+		position: absolute;
+		bottom: -10px;
+		right: -75px;
+		pointer-events: 0;
+	}
+	
+	&__box{
+		margin: 0 auto;
+		background: #fff;
+		padding: 85px 125px;
+		width: 896px;
+		border-radius: 5px;
+		position: relative;
+		min-height: 510px;
+
+		display: none;
+
+		&:first-child{
+			display: block;
+		}
+
+		&:before,
+		&:after{
+			position: absolute;		
+		}
+
+		&:before{
+			content: url(../images/quiz/bottle.png);
+			bottom: -50px;
+			left: -115px;	
+		}
+
+		&:after{
+			content: url(../images/quiz/skater.png);
+			bottom: 0px;
+			right: -60px;			
+		}
+
+		&--question{
+			
+			padding: 55px 240px 50px;
+			
+			&:before{
+				left: 10px;
+			}
+
+			&:after{
+				display: none;
+			}		
+		}
+
+		&--result{
+			padding: 60px 50px 50px;
+			text-align: center;
+			
+			&:before,
+			&:after{
+				display: none;
+			}	
+
+			.quiz__content{
+				max-width: 550px;
+				margin: auto;
+			}	
+		}
+	}
+
+	&__bar{
+		position: absolute;
+		top: 20px;
+		right: 15px;
+	}
+
+	&__content{
+		position: relative;
+		max-width: 470px;
+	}
+
+	&__title{
+		text-align: left;
+		margin: 0 0 15px;
+	}
+
+	&__text{
+		font-size: 18px;
+	}
+
+	&__button{
+		width: 185px;
+	}
+
+	&__result-bottles{
+		margin: 0 0 30px;
+	}
+
+	&__result-bottle{
+		display: inline-block;
+		margin: 0 10px;
+		@include sprite($quiz-result-bottle);		
+	}
+}
+
+
+.quiz-bar{
+	text-align: center;
+	color: #b7b7b7;
+	font-size: 14px;
+
+	&__content{
+		&:before{
+			content: '';
+			display: block;
+			margin: 0 auto 5px;
+			@include sprite($quiz-bar-0);
+		}
+
+		&--1{
+			&:before{
+				@include sprite($quiz-bar-1);
+			}
+		}
+
+		&--2{
+			&:before{
+				@include sprite($quiz-bar-2);
+			}
+		}
+	}
+}
+
+.quiz-question{
+
+	&__pers{
+		background: #fff url(../images/quiz/boy.png) 50% 0 no-repeat;
+		height: image-height('../assets/images/quiz/boy.png');
+
+		position: relative;
+		margin: 0 0 60px;
+	}
+
+	&__question{
+		//background: #fff;
+		padding: 3px 3px 13px 23px;
+		text-align: center;
+		//border-radius: 5px;
+		//border: 1px solid $blue;
+		font-size: 22px;
+		font-weight: 700;
+
+		background: url(../images/quiz/bubble.png) 50% 0 no-repeat;
+		min-height: image-height('../assets/images/quiz/bubble.png');
+		width: image-width('../assets/images/quiz/bubble.png');
+		
+		position: absolute;
+		top: -40px;
+		left: 50%;
+		margin: 0 0 0 20px;
+
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+	}
+
+	&__answers{
+		margin: 0 0 50px;
+		text-align: center;
+	}
+
+	&__answer{
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 15px;
+	}
+
+	&__select{
+		width: 325px;
+		margin: 0 auto 50px;
+	}
+
+	&__button-placeholder{
+		text-align: center;
+	}
+}
+
+
+/* ==========================================================================
+ * quiz-radio
+ * ========================================================================== */
+
+.quiz-radio{
+	display: block;
+	height: 38px;
+	color: #4e4e4e;
+
+	&__input{
+		position: absolute;
+		left: -9999px;
+
+		&:checked + .quiz-radio__text:before{
+			@include sprite($radio-selected);
+		}
+	}
+
+	&__text{
+		display: block;
+		font-size: 22px;
+		//padding: 0 0 0 74px;
+		position: relative;
+		line-height: 38px;
+		padding: 0 0 0 50px;
+
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include sprite($radio);
+		}
+	}	
+}
+
+
+/* ==========================================================================
+ * quiz-select
+ * ========================================================================== */
+
+.quiz-select{
+	border: 1px solid $blue;
+	border-radius: 5px;
+	background: #fff;
+	text-align: left;
+	overflow: hidden;
+	position: relative;
+	height: 60px;
+	min-width: 120px;
+
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 15px;
+		bottom: 0;
+		margin: auto;
+		@include sprite($select);
+	}
+
+	&__select-placeholder{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: -35px;
+		bottom: 0;		
+	}
+
+	&__select{
+		-webkit-appearance: none;
+		border: 0;
+		background: transparent;	
+		font-size: 24px;
+		font-family: $mainFontFamily;
+		color: #4e4e4e;
+		line-height: 63px;
+		height: 58px;
+		padding: 0 0 0 20px;
+		margin: 0;
+		width: 100%;
+		display: block;
+		outline: none;
+	}
+}

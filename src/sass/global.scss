@@ -14,6 +14,21 @@
 	&--modal{
 		overflow: hidden;
 	}
+
+	&--bg-blue-dark{
+		background: #0061a6 url(../images/bg/pattern2.png) 0 0 repeat;
+		color: #fff;	
+	}
+
+	&--bg-blue-darken{
+		background: #004e84 url(../images/bg/pattern2.png) 0 0 repeat;
+		color: #fff;	
+	}
+
+	&--bg-blue-ligth{
+		background: #68d4fe url(../images/bg/pattern3.png) 0 0 repeat;
+	}
+
 }
 
 .html__body{
