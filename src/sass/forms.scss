@@ -60,6 +60,37 @@
 		}
 	}
 
+	&--yellow{
+		background: $yellow;
+		color: #252525;
+		&:hover{
+			background: lighten($yellow, 5%);
+		}
+		&:active{
+			background: darken($yellow, 5%);
+		}
+	}
+
+	&--green-img{
+		background: $green;
+		@include sprite($button-green);
+		line-height: 64px;
+		font-size: 20px;
+		font-weight: 800;
+		text-transform: uppercase;
+		color: #fff;
+		border-radius: 3px;
+		box-shadow: 0 7px 0 #318e2b;
+
+		transition: none;
+		&:hover{
+			//background: lighten($green, 5%);
+		}
+		&:active{
+			//background: darken($green, 5%);
+		}
+	}
+
 	&--m{
 		border-radius: 4px;
 		font-weight: 600;

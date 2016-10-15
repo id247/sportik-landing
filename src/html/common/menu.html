@@ -1,0 +1,65 @@
+<div class="menu" id="menu">
+
+	<nav class="container__section section menu__section">
+		
+		<div class="section__wrap menu__wrap">
+			
+			<ul class="menu__list">
+
+				@@if (role === "parents"){ 
+				
+				<li class="menu__item">
+					<a href="#check" class="menu__href inverselink js-goto">Родителям на заметку</a>
+				</li>
+				
+				<li class="menu__item">
+					<a href="#how-many" class="menu__href inverselink js-goto">Питьевой режим</a>
+				</li>
+				
+				<li class="menu__item">
+					<a href="#reasons" class="menu__href inverselink js-goto">10 причин пить больше воды</a>
+				</li>
+				
+				<li class="menu__item">
+					<a href="#videos" class="menu__href inverselink js-goto">О Пользе воды</a>
+				</li>
+				
+				<li class="menu__item">
+					<a href="#about" class="menu__href inverselink js-goto">О продукте</a>
+				</li>
+
+				}
+
+				@@if (role === "kids"){ 
+				
+				<li class="menu__item">
+					<a href="spotrik-quiz.html" class="menu__href inverselink">Пройди тест</a>
+				</li>
+				
+				<li class="menu__item">
+					<a href="#how-many" class="menu__href inverselink js-goto">Это интересно</a>
+				</li>
+				
+				<li class="menu__item">
+					<a href="#reasons" class="menu__href inverselink js-goto">как вода помогает нам</a>
+				</li>
+				
+				<li class="menu__item">
+					<a href="#videos" class="menu__href inverselink js-goto">Твой "Спортик"</a>
+				</li>
+				
+				<li class="menu__item menu__item--pers">
+					<div class="menu-pers menu-pers--boy1">
+						Твой друг
+					</div><!-- /.menu-pers -->
+				</li>
+
+				}
+			
+			</ul> <!-- /.menu__list -->
+				
+		</div> <!-- /.menu__wrap -->
+
+	</nav> <!-- /.menu -->
+
+</div><!-- /.menu -->

@@ -2,6 +2,13 @@
 
 @font-face {
     font-family: 'Gerbera';
+    src: url('../fonts/Gerbera-Black.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gerbera';
     src: url('../fonts/Gerbera-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
@@ -55,6 +62,7 @@ $blue: #0069b0;
 $pink: #f894bd;
 $green: #55bc4f;
 $yellow: #f9de38;
+$red: #e22831;
 
 $text: $blue;
 

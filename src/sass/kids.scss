@@ -1,0 +1,271 @@
+/* ==========================================================================
+ * how-many-kid
+ * ========================================================================== */
+
+.how-many-kid{
+	margin-top: -80px;
+	padding: 170px 0 0;
+	position: relative;
+
+	background: url(../images/bg/skate.png) 50% 0 no-repeat;
+	min-height: 750px;
+
+	&__content{
+		width: 700px;
+		margin: 0 0 0 20px;
+		position: relative;
+	}
+
+	&__title{
+		text-align: left;
+	}
+
+	&__text{
+		width: 520px;
+	}
+
+	&__skate{
+		position: absolute;
+		top: 116px;
+		left: 50%;
+		margin: 0 0 0 -30px; 
+	}
+}
+
+
+/* ==========================================================================
+ * skate
+ * ========================================================================== */
+
+.skate{
+	&__boy{
+		@include sprite($skate);
+		position: relative;
+	}
+
+	&__bottle{
+		position: absolute;
+		top: 52px;
+		left: 220px;
+		@include sprite($skate-bottle);
+	}
+
+	&__finger{
+		position: absolute;
+		top: 84px;
+		left: 270px;
+		@include sprite($skate-finger);
+	}
+}
+
+
+/* ==========================================================================
+ * ineresting
+ * ========================================================================== */
+
+.ineresting{
+	margin: -100px 0 0;
+	padding: 180px 0 50px;
+	position: relative;
+	background: #68d4fe;
+
+	&:before{
+		content: '';
+		background: url(../images/bg/road.png) 50% 0 no-repeat;
+		height: image-height('../assets/images/bg/road.png');
+		background-size: 100% 100%;
+
+		position: absolute;
+		top: -150px;
+		left: 0;
+		right: 0;
+	}
+
+	&__wrap{
+		position: relative;
+	}
+
+	&__title{
+		font-size: 57px;
+	}
+}
+
+
+/* ==========================================================================
+ * water-helps
+ * ========================================================================== */
+
+.water-helps{
+	background: #55c5f1 url(../images/bg/water-helps.png) 50% 0 no-repeat;
+	color: #fff;
+	padding: 330px 0 150px;
+	text-align: center;
+
+
+	&__title{
+		font-size: 57px;
+	}
+
+	&__text{
+		width: 720px;
+		margin: 0 auto 30px;
+	}
+
+	&__button{
+		width: 220px;
+	}
+}
+
+
+/* ==========================================================================
+ * yours
+ * ========================================================================== */
+
+.yours{
+	padding: 0 0 50px;
+
+	&:before{
+		content: '';
+		display: block;
+		background: url(../images/bg/water-helps-waves.png) 50% 0 no-repeat;
+		height: image-height('../assets/images/bg/water-helps-waves.png');
+		margin: 0 0 120px;
+	}
+
+	&__text{
+		text-align: center;
+		margin: 0 0 65px;
+	}
+
+	&__select{
+		margin: 0 0 50px;
+	}
+}
+
+.yours-select{
+	text-align: center;
+
+	&__title{
+		font-size: 20px;
+		opacity: .5;
+		margin: 0 0 20px;	
+	}
+
+	&__list{
+		
+	}
+
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		margin:  0 10px;
+	}
+}
+
+.yours-select-radio{
+
+	&__input{
+		position: absolute;
+		left: -9999px;
+
+		&:checked + .yours-select-radio__image-placeholder{
+			box-shadow: none;
+			&:before{
+				display: none;
+			}
+		}
+
+		&:checked + .yours-select-radio__circle{
+			box-shadow: 0 0 10px #fff;
+		}
+	}
+
+	&__image-placeholder{
+		display: block;
+		position: relative;
+		box-shadow: 0 2px 15px rgba(0,0,0,.8);
+
+		&:before{
+			content: '';
+			border: 3px solid #fff;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+
+	&__image{
+		display: block;
+	}
+
+	&__circle{
+		display: block;
+		width: 58px;
+		height: 58px;
+		border: 3px solid #fff;
+		border-radius: 50%;
+
+		&--blue{
+			background: $blue;
+		}
+
+		&--yellow{
+			background: $yellow;
+		}
+
+		&--green{
+			background: $green;
+		}
+
+		&--red{
+			background: $red;
+		}
+	}
+}
+
+.your-bottle{
+
+	&__bottle{		
+
+		margin: auto;
+
+
+		background: url(../images/bottles/blue-boy.png) 50% 0 no-repeat;
+		width: image-width('../assets/images/bottles/blue-boy.png');
+		height: image-height('../assets/images/bottles/blue-boy.png');
+	}
+
+	&__skate{	
+		position: fixed;
+		top: 50%;
+		left: 100%;
+	}
+
+	&__bag{
+		
+	}
+
+}
+
+.your-bottle-bag{
+	background: url(../images/bottles/bag.png) 50% 0 no-repeat;
+	height: image-height('../assets/images/bottles/bag.png');
+	padding: 200px 0 0;
+	&__content{
+		margin: 0px 0 0 760px;
+	}
+
+	&__title{
+		font-size: 24px;
+		font-weight: 700;
+		margin: 0 0 15px;
+	}
+
+	&__text{
+		
+	}
+}
+
+

@@ -1,50 +1,10 @@
-<header class="container__section section header" id="header">
-	
-	<div class="section__wrap header__wrap">
+@@include("../common/header.html", {
+	"role": "parents"
+})
 
-	
-	</div> <!-- /.header -->
-
-</header> <!-- /.header -->
-
-<div class="menu" id="menu">
-
-	<nav class="container__section section menu__section">
-		
-		<div class="section__wrap menu__wrap">
-			
-			<ul class="menu__list">
-				
-				<li class="menu__item">
-					<a href="#check" class="menu__href inverselink js-goto">Родителям на заметку</a>
-				</li>
-				
-				<li class="menu__item">
-					<a href="#how-many" class="menu__href inverselink js-goto">Питьевой режим</a>
-				</li>
-				
-				<li class="menu__item">
-					<a href="#reasons" class="menu__href inverselink js-goto">10 причин пить больше воды</a>
-				</li>
-				
-				<li class="menu__item">
-					<a href="#videos" class="menu__href inverselink js-goto">О Пользе воды</a>
-				</li>
-				
-				<li class="menu__item">
-					<a href="#about" class="menu__href inverselink js-goto">О продукте</a>
-				</li>
-			
-			</ul> <!-- /.menu__list -->
-				
-		</div> <!-- /.menu__wrap -->
-
-	</nav> <!-- /.menu -->
-
-</div><!-- /.menu -->
-
-
-
+@@include("../common/menu.html", {
+	"role": "parents"
+})
 
 <section class="container__section section check" id="check">
 	
@@ -54,75 +14,79 @@
 			Родителям на заметку
 		</h2>
 
-		<ul class="check__list">
-			
-			<li class="check__item check-item">
+		<div class="check__list image-links">
 
-				<a href="" class="check-item__href">
+			<ul class="image-links__list">
 				
-					<span class="check-item__image-placeholder">
-						
-						<span class="check-item__image-border">
-							
-							<img src="assets/images/check/1.jpg" alt="" class="check-item__image">
+				<li class="image-links__item image-links-item">
 
-						</span><!-- /.check-item__image-border -->
-
-					</span><!-- /.check-item__image-placeholder -->
-
-					<span href="#" class="check-item__text">
-						Почему так важно употреблять воду?
-					</span>
-
-				</a>
-				
-			</li> <!-- /.check__item -->
-			
-			<li class="check__item check-item">
-
-				<a href="" class="check-item__href">
-				
-					<span class="check-item__image-placeholder">
-						
-						<span class="check-item__image-border">
-							
-							<img src="assets/images/check/2.jpg" alt="" class="check-item__image">
-
-						</span><!-- /.check-item__image-border -->
-
-					</span><!-- /.check-item__image-placeholder -->
-
-					<span href="#" class="check-item__text">
-						Как отучить ребенка от&nbsp;газировки?
-					</span>
-
-				</a>
-				
-			</li> <!-- /.check__item -->
-			
-			<li class="check__item check-item">
-
-				<a href="" class="check-item__href">
+					<a href="#" class="image-links-item__href">
 					
-					<span class="check-item__image-placeholder">
-						
-						<span class="check-item__image-border">
+						<span class="image-links-item__image-placeholder">
 							
-							<img src="assets/images/check/3.jpg" alt="" class="check-item__image">
+							<span class="image-links-item__image-border">
+								
+								<img src="assets/images/check/1.jpg" alt="" class="image-links-item__image">
 
-						</span><!-- /.check-item__image-border -->
+							</span><!-- /.image-links-item__image-border -->
 
-					</span><!-- /.check-item__image-placeholder -->
+						</span><!-- /.image-links-item__image-placeholder -->
 
-					<span href="#" class="check-item__text">
-						Как научить соблюдать питьевой режим?
-					</span>
+						<span class="image-links-item__text">
+							Почему так важно употреблять воду?
+						</span>
 
-				</a>
+					</a>
+					
+				</li> <!-- /.image-links__item -->
 				
-			</li> <!-- /.check__item -->
-		
-		</ul> <!-- /.check__list -->
+				<li class="image-links__item image-links-item">
+
+					<a href="#" class="image-links-item__href">
+					
+						<span class="image-links-item__image-placeholder">
+							
+							<span class="image-links-item__image-border">
+								
+								<img src="assets/images/check/2.jpg" alt="" class="image-links-item__image">
+
+							</span><!-- /.image-links-item__image-border -->
+
+						</span><!-- /.image-links-item__image-placeholder -->
+
+						<span class="image-links-item__text">
+							Как отучить ребенка от&nbsp;газировки?
+						</span>
+
+					</a>
+					
+				</li> <!-- /.image-links__item -->
+				
+				<li class="image-links__item image-links-item">
+
+					<a href="#" class="image-links-item__href">
+						
+						<span class="image-links-item__image-placeholder">
+							
+							<span class="image-links-item__image-border">
+								
+								<img src="assets/images/check/3.jpg" alt="" class="image-links-item__image">
+
+							</span><!-- /.image-links-item__image-border -->
+
+						</span><!-- /.image-links-item__image-placeholder -->
+
+						<span class="image-links-item__text">
+							Как научить соблюдать питьевой режим?
+						</span>
+
+					</a>
+					
+				</li> <!-- /.image-links__item -->
+			
+			</ul> <!-- /.image-links__list -->
+
+		</div><!-- /.image-links -->
 	
 	</div> <!-- /.check__wrap -->
 
@@ -145,7 +109,7 @@
 				Сколько воды нужно пить Вашему ребенку?
 			</h2>
 
-			<div class="how-many__text text">
+			<div class="section__text how-many__text text">
 				<p>
 					Как узнать, сколько воды требуется именно Вашему ребёнку? Воспользуйтесь калькулятором водного баланса! С его помощью Вы сможете рассчитать суточную норму потребления воды с учётом возраста, веса и активности малыша.
 				</p>
@@ -153,7 +117,7 @@
 
 			<div class="how-many__button-placeholder">
 						
-				<a href="#" class="how-many__button button button--green button--m">Составить питьевой режим</a>
+				<a href="#" class="how-many__button button button--green button--m">Рассчитать питьевой режим</a>
 			
 			</div><!-- /.how-many__button-placeholder -->
 
@@ -185,87 +149,9 @@
 
 
 
-<section class="container__section section videos" id="videos">
-	
-	<div class="section__wrap videos__wrap">
-
-		<h2 class="section__title videos__title">
-			Интересное видео
-		</h2>
-
-		<ul class="videos__list">
-			
-			<li class="videos__item videos-item">
-				
-				<a href="https://www.youtube.com/watch?v=XQu8TTBmGhA" class="videos-item__href js-modal-video-open">
-					
-					<span class="videos-item__image-placeholder">
-						
-						<img src="assets/images/videos/1.png" alt="" class="videos-item__image">
-
-					</span>
-
-					<span class="videos-item__title">
-						Выпаривание
-					</span>
-
-					<span class="videos-item__text text">
-						Что останется после выпаривания&nbsp;газировки?
-					</span>
-
-				</a>
-				
-			</li> <!-- /.videos__item -->
-			
-			<li class="videos__item videos-item">
-				
-				<a href="https://www.youtube.com/watch?v=XQu8TTBmGhA" class="videos-item__href js-modal-video-open">
-					
-					<span class="videos-item__image-placeholder">
-						
-						<img src="assets/images/videos/2.png" alt="" class="videos-item__image">
-
-					</span>
-
-					<span class="videos-item__title">
-						Растения в стакане
-					</span>
-
-					<span class="videos-item__text text">
-						Наблюдаем как растения реагируют&nbsp;на&nbsp;различную среду
-					</span>
-
-				</a>
-				
-			</li> <!-- /.videos__item -->
-			
-			<li class="videos__item videos-item">
-				
-				<a href="https://www.youtube.com/watch?v=XQu8TTBmGhA" class="videos-item__href js-modal-video-open">
-					
-					<span class="videos-item__image-placeholder">
-						
-						<img src="assets/images/videos/3.png" alt="" class="videos-item__image">
-
-					</span>
-
-					<span class="videos-item__title">
-						 Вопрос-ответ
-					</span>
-
-					<span class="videos-item__text text">
-						Вопросы о воде
-					</span>
-
-				</a>
-				
-			</li> <!-- /.videos__item -->
-		
-		</ul> <!-- /.videos__list -->
-	
-	</div> <!-- /.videos__wrap -->
-
-</section> <!-- /.videos -->
+@@include("../sections/videos.html", {
+	"role": "parents"
+})
 
 
 
