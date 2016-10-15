@@ -1,0 +1,120 @@
+/* ==========================================================================
+ * book
+ * ========================================================================== */
+
+.book{
+	padding-top: 30px;
+
+	&__wrap{
+		width: 1000px;
+	}
+
+	&__book-placeholder{
+		float: left;
+	}
+
+	&__book{
+		position: relative;
+		display: inline-block;
+
+		&:hover{
+			.book__opened{
+				visibility: visible;
+			}
+		}
+	}
+
+	&__closed{
+		display: block;
+	}
+
+	&__opened{
+		position: absolute;
+		top: -15px;
+		left: 0;
+
+		visibility: hidden;
+	}
+
+	&__content{
+		margin: 50px 0 0 470px;
+	}
+	&__button{
+		width: 200px;
+	}
+}
+
+/* ==========================================================================
+ * read
+ * ========================================================================== */
+
+.read{
+
+	&__book{
+		background: url(../images/book/open-book.png) 50% 0 no-repeat;
+		height: image-height('../assets/images/book/open-book.png');
+		width: image-width('../assets/images/book/open-book.png');
+		margin: auto;
+		padding: 28px 44px 0 47px;
+		position: relative;
+	}
+
+	&__pages{
+		//background: #000;
+		height: 579px;
+	}
+
+	&__page{
+		//padding: 50px;
+	}
+}
+
+.page{
+	background: #fff;
+
+	&.even{
+		background: #fff url(../images/book/even.png) 0 0 repeat-y;
+	}
+
+	&.odd{
+		background: #fff url(../images/book/odd.png) 0 0 repeat-y;
+	}
+	
+	&__content{
+		padding: 25px 23px;
+		color: #252525;
+	}
+
+	&__image-placeholder{
+		margin: 0 0 15px;
+	}
+
+	&__title{
+		font-size: 16px;
+		font-weight: 700;
+		margin: 0 0 10px;
+	}
+
+	&__text{
+		font-size: 16px;
+		line-height: (26/16);
+	}
+
+	&__button-placeholder{
+		position: absolute;
+		bottom: 30px;
+		left: 30px;
+
+		&--next{
+			left: auto;
+			right: 30px;
+		}
+	}
+
+	&__button{
+		font-size: 16px;
+		padding: 0;
+		background: none;
+		color: #252525;
+	}
+}

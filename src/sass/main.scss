@@ -72,6 +72,18 @@
 	background: #57d4f2 url(../images/bg/header.jpg) 50% 0 no-repeat;
 	background-size: cover;
 	height: image-height('../assets/images/bg/header.jpg');
+	position: relative;
+
+	&__href{
+		position: absolute;
+		top: 20px;
+		width: 300px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		text-indent: -9999px;
+	}
 }
 
 /* ==========================================================================
@@ -135,6 +147,30 @@
 	text-align: left;
 	&--boy1{
 		@include sprite($menu-pers-boy-1);
+	}
+}
+
+/* ==========================================================================
+ * article
+ * ========================================================================== */
+
+.article{
+
+	&__content{
+		background: #fff;
+		border-radius: 5px;
+		padding: 30px 80px;
+		width: 1000px;
+		margin: 0 auto;
+	}
+
+	&__title{
+		text-align: left;
+	}
+
+	&__text{
+		font-size: 18px;
+		color: #333333;
 	}
 }
 

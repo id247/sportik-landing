@@ -411,6 +411,55 @@ export default (function (window, document, $){
 
 	}
 
+	function read(){
+		const $readBook = $('#read-book');
+
+		if (!$readBook){
+			return;
+		}
+
+		const $nexts = $readBook.find('.js-next');
+		const $prevs = $readBook.find('.js-prev');
+
+		const book = $readBook.turn({
+			width: 812,
+			height: 579,
+			autoCenter: false,
+			page: 2,
+			gradients: true,
+			//turnCorners: false,
+			when: {
+		      start: function(event, pageObject, corner) {
+		       	if (corner != null) {
+		        	//return event.preventDefault();
+		    	}
+		      },
+		      turning: function(event, page, corner) {
+		        if (page==1) {
+		          return event.preventDefault();
+		       	}
+		      }
+     		},
+		});
+
+		$nexts.on('click', function(e){
+			e.preventDefault();
+
+			console.log('next');
+
+			//$readBook.turn('next');
+		})
+
+		$prevs.on('click', function(e){
+			e.preventDefault();
+
+			console.log('previous');
+
+			//$readBook.turn('previous');
+		})
+
+	}
+
 
 	function init(){
 
@@ -425,6 +474,7 @@ export default (function (window, document, $){
 
 		important();
 		quiz();
+		read();
 	}
 
 	return {
