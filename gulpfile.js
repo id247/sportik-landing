@@ -140,6 +140,7 @@ gulp.task('html', function(callback){
 			basepath: '@file',
 			context: {
 				server: server,
+				url: 'sportik',
 			},
 			indent: true
 		}))

@@ -29,6 +29,10 @@
 		color: #fff;	
 	}
 
+	&--bg-blue-ligth{
+		background: #68d4fe url(../images/bg/pattern3.png) 0 0 repeat;
+	}
+
 	&__wrap{
 		@include clearfix;
 		max-width: 1200px;

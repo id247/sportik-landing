@@ -210,6 +210,136 @@ export default (function (window, document, $){
 		});
 	}
 
+	/* ==========================================================================
+	 * important
+	 * ========================================================================== */
+
+
+	function important(){
+
+		const $important = $('#important');
+
+		if (!$important){
+			return;
+		}
+
+		const $items = $important.find('.js-item');
+		const $itemsDots = $important.find('.js-item-dots');
+		const $bottle = $important.find('.js-bottle');
+
+		const $open = $important.find('.js-bubble-open');
+		const $close = $important.find('.js-bubble-close');
+		const $bubbles = $important.find('.js-bubble');
+		
+		const $bottleFull = $important.find('.js-bottle-full');
+
+		const $win = $(window);
+		
+		let winWidth = $win.width();
+		let winHeight = $win.height();
+
+		const clicked =[0,0,0,0,0];
+
+		const openClass = 'important-list-item__bubble--visible';
+
+		const extras = [
+			1.5,
+			3.6,
+			2.5,
+			5.0,
+			2.3
+		];
+
+		function fillBottle(){
+			const clickedCount = clicked.filter( item => item > 0 ).length;
+			
+			let height = 5;
+
+			switch(clickedCount){
+				case 1:
+					height = 15;
+					break;
+				case 2:
+					height = 25;
+					break;
+				case 3:
+					height = 35;
+					break;
+				case 4:
+					height = 65;
+					break;
+				case 5:
+					height = 100;
+					break;
+				default:
+			}
+
+			$bottleFull.css('height', height + '%');
+		}
+		fillBottle();
+
+		$open.on('click', function(e){
+
+			const $this = $(this);
+			const $bubble = $this.parent().find('.js-bubble');
+			const id = parseInt($this.data('id'));
+			
+			$bubble.toggleClass(openClass);
+
+			$bubbles.not($bubble).removeClass(openClass);
+
+			clicked[id] = 1;
+
+			fillBottle();
+		})
+
+		$close.on('click', function(e){
+			$bubbles.removeClass(openClass);
+		})
+
+		$(document).on('mousemove', function(e){
+
+			const x = - ( e.clientX - winWidth / 2 ) / 80;
+			const y = - ( e.clientY - winHeight / 2 ) / 40;
+
+			const girlX = -x;
+			const girlY = -y;
+
+
+			
+			$items.each(function(index){
+
+				const xx = x * extras[index];
+				const yy = y * extras[index];
+
+				$(this).css({
+					'-ms-transform': 'translate(' + xx + 'px, ' + yy + 'px)',
+					'-webkit-transform': 'translate(' + xx + 'px, ' + yy + 'px)',
+					'transform': 'translate(' + xx + 'px, ' + yy + 'px)',
+				});
+
+				$itemsDots.eq(index).css({
+					'-ms-transform': 'translate(' + xx + 'px, ' + yy + 'px)',
+					'-webkit-transform': 'translate(' + xx + 'px, ' + yy + 'px)',
+					'transform': 'translate(' + xx + 'px, ' + yy + 'px)',
+				});
+
+			});
+			
+			$bottle.css({
+				'-ms-transform': 'translate(' + girlX + 'px, ' + girlY + 'px)',
+				'-webkit-transform': 'translate(' + girlX + 'px, ' + girlY + 'px)',
+				'transform': 'translate(' + girlX + 'px, ' + girlY + 'px)',
+			});
+		});
+
+		$win.on('resize', function(){
+			winWidth = $win.width();
+			winHeight = $win.height();
+		});
+	}	
+
+
 	function init(){
 
 		if (!isMobile){
@@ -220,6 +350,8 @@ export default (function (window, document, $){
 		menu();
 		form();
 		modals();
+
+		important();
 	}
 
 	return {
