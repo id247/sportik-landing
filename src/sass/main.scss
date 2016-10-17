@@ -142,11 +142,26 @@
 }
 
 .menu-pers{
-	display: inline-block;
+	display: block;
+	//display: none;
 	text-indent: -9999px;
 	text-align: left;
-	&--boy1{
-		@include sprite($menu-pers-boy-1);
+	@include sprite($menu-pers-none);
+
+	&[data-menu-pers="1"]{
+		@include sprite($boy1);
+	}
+
+	&[data-menu-pers="2"]{
+		@include sprite($boy2);
+	}
+
+	&[data-menu-pers="3"]{
+		@include sprite($girl1);
+	}
+
+	&[data-menu-pers="4"]{
+		@include sprite($girl2);
 	}
 }
 
@@ -552,4 +567,103 @@
 	&__frame{
 		
 	}
+}
+
+.modal-pers{
+	background: #68d4fe url(../images/bg/pattern3.png) 0 0 repeat;
+	max-width: 1220px; 
+	min-width: 1200px;
+	padding: 20px 10px 120px;
+	text-align: center;
+
+	&:before{
+		content: '';
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		height: 300px;
+		background: url(../images/bg/modal-pers.png) 50% 100% no-repeat;
+	}
+
+	&__close{
+		top: 10px;
+		right: 10px;
+		left: auto;
+		@include sprite($close-pers);
+	}
+
+	&__content{
+		position: relative;
+	}
+
+	&__logo-palceholder{
+		margin: 0 0 20px;
+	}
+
+	&__logo{
+		display: inline-block;
+		@include sprite($sportik-logo);
+	}
+
+	&__title{
+		font-size: 86px;
+		text-transform: uppercase;
+		font-family: $pribambas;
+		text-shadow: 0 3px 10px rgba(19,4,130,.5);
+		color: #fff;
+	}
+
+	&__text{
+		font-size: 22px;
+		max-width: 800px;
+		margin: 0 auto 20px;
+	}
+
+	&__list{
+		margin: 0 -20px;
+	}
+
+	&__item{
+		margin: 0 -4px;
+		display: inline-block;
+		vertical-align: middle;
+
+		&:nth-child(2){
+			margin: 0 -45px;
+		}
+	}
+}
+
+.modal-pers-item{
+	position: relative;
+	display: inline-block;
+
+	&__input{
+		position: absolute;
+		left: -9999px;
+
+		&--active{
+			& + .modal-pers-item__image{
+				opacity: 0;
+			}
+
+			&:hover + .modal-pers-item__image,
+			&:checked + .modal-pers-item__image{
+				opacity: 1;
+			}
+		}
+	}
+
+	&__gray{
+		display: block;
+	}
+
+	&__image{
+		transition: all .2s;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
 }

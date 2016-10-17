@@ -2,12 +2,107 @@
 	"role": "kids"
 })
 
+<div class="container__modal modal" id="modal-pers">
+	
+	<div class="modal__bg js-modal-close"></div><!-- /.modal__bg -->
+	
+	<div class="modal__content modal-pers">
+
+		<div class="modal-pers__content">
+
+			<div class="modal-pers__logo-placeholder">
+				
+				<div class="modal-pers__logo">
+					
+				</div><!-- /.modal-pers__logo -->
+
+			</div><!-- /.modal-pers__logo-placeholder -->
+
+			<div class="modal-pers__title">
+				Выбери своего героя
+			</div><!-- /.modal-pers__title -->
+
+			<div class="modal-pers__text">
+				<p>
+					С кем ты хочешь подружиться? Выбери героя, который будет помогать тебе учиться, узнавать новое и соблюдать питьевой режим!
+				</p>
+			</div><!-- /.modal-pers__text -->
+
+			<div class="modal-pers__list">
+
+				<div class="modal-pers__item">
+				
+					<label class="modal-pers-item">
+
+						<input type="radio" name="pers" value="2" class="modal-pers-item__input js-pers-input">
+						
+						<img src="assets/images/choose-pers/1.png" alt="" class="modal-pers-item__image">
+
+						<img src="assets/images/choose-pers/1-gray.png" alt="" class="modal-pers-item__gray">
+						
+					</label><!-- /.modal-pers-item -->
+
+				</div><!-- /.modal-pers__item -->
+
+				<div class="modal-pers__item">
+				
+					<label class="modal-pers-item">
+
+						<input type="radio" name="pers" value="1" class="modal-pers-item__input js-pers-input">
+						
+						<img src="assets/images/choose-pers/2.png" alt="" class="modal-pers-item__image">
+
+						<img src="assets/images/choose-pers/2-gray.png" alt="" class="modal-pers-item__gray">
+						
+					</label><!-- /.modal-pers-item -->
+
+				</div><!-- /.modal-pers__item -->
+
+				<div class="modal-pers__item">
+				
+					<label class="modal-pers-item">
+
+						<input type="radio" name="pers" value="3" class="modal-pers-item__input js-pers-input">
+						
+						<img src="assets/images/choose-pers/3.png" alt="" class="modal-pers-item__image">
+
+						<img src="assets/images/choose-pers/3-gray.png" alt="" class="modal-pers-item__gray">
+						
+					</label><!-- /.modal-pers-item -->
+
+				</div><!-- /.modal-pers__item -->
+
+				<div class="modal-pers__item">
+				
+					<label class="modal-pers-item">
+
+						<input type="radio" name="pers" value="4" class="modal-pers-item__input js-pers-input">
+						
+						<img src="assets/images/choose-pers/4.png" alt="" class="modal-pers-item__image">
+
+						<img src="assets/images/choose-pers/4-gray.png" alt="" class="modal-pers-item__gray">
+						
+					</label><!-- /.modal-pers-item -->
+
+				</div><!-- /.modal-pers__item -->
+
+			</div><!-- /.modal-pers__list -->
+
+		</div><!-- /.modal-pers__content -->
+		
+		<button class="modal__close modal-pers__close button js-modal-close">
+			x
+		</button>
+
+	</div><!-- /.modal__content -->
+
+</div><!-- /.container__modal -->
 
 <section class="container__section section how-many-kid" id="how-many-kid">
 
 	<div class="section__wrap how-many-kid__wrap">
 
-		<div class="how-many-kid__skate skate">
+		<div class="how-many-kid__skate skate js-skate-animation">
 		
 			<div class="skate__boy">					
 		
@@ -163,7 +258,7 @@
 					
 					<label class="yours-select-radio">
 						
-						<input type="radio" name="image" class="yours-select-radio__input" value="girl" checked>
+						<input type="radio" name="image" class="yours-select-radio__input js-select-sex" value="girl" checked>
 
 						<span class="yours-select-radio__image-placeholder">
 
@@ -179,7 +274,7 @@
 					
 					<label class="yours-select-radio">
 						
-						<input type="radio" name="image" class="yours-select-radio__input" value="boy" >
+						<input type="radio" name="image" class="yours-select-radio__input js-select-sex" value="boy" >
 
 						<span class="yours-select-radio__image-placeholder">
 
@@ -207,7 +302,7 @@
 					
 					<label class="yours-select-radio">
 						
-						<input type="radio" name="color" class="yours-select-radio__input" value="yellow" >
+						<input type="radio" name="color" class="yours-select-radio__input js-select-color" value="yellow" >
 
 						<span class="yours-select-radio__circle yours-select-radio__circle--yellow">
 						</span>
@@ -220,7 +315,7 @@
 					
 					<label class="yours-select-radio">
 						
-						<input type="radio" name="color" class="yours-select-radio__input" value="blue" checked>
+						<input type="radio" name="color" class="yours-select-radio__input js-select-color" value="blue" checked>
 
 						<span class="yours-select-radio__circle yours-select-radio__circle--blue">
 						</span>
@@ -233,7 +328,7 @@
 					
 					<label class="yours-select-radio">
 						
-						<input type="radio" name="color" class="yours-select-radio__input" value="green">
+						<input type="radio" name="color" class="yours-select-radio__input js-select-color" value="green">
 
 						<span class="yours-select-radio__circle yours-select-radio__circle--green">
 						</span>
@@ -246,7 +341,7 @@
 					
 					<label class="yours-select-radio">
 						
-						<input type="radio" name="color" class="yours-select-radio__input" value="red">
+						<input type="radio" name="color" class="yours-select-radio__input js-select-color" value="red">
 
 						<span class="yours-select-radio__circle yours-select-radio__circle--red">
 						</span>
@@ -259,13 +354,9 @@
 			
 		</div><!-- /.yours__select -->
 
-		<div class="yours__bottle your-bottle">
+		<div class="yours__bottle your-bottle js-bottle-animate-box">
 
-			<div class="your-bottle__bottle">
-					
-			</div><!-- /.your-bottle__bottle -->
-
-			<div class="your-bottle__skate skate">
+			<div class="your-bottle__skate skate js-bottle-skate-animate">
 
 				<div class="skate__boy">					
 					<div class="skate__finger"></div><!-- /.skate__bottle -->
@@ -273,9 +364,28 @@
 				
 			</div><!-- /.your-bottle__boy -->
 
-			<div class="your-bottle__bag your-bottle-bag">
+			<div class="your-bottle__bottle js-bottle-animate" data-color="blue">
+					
+			</div><!-- /.your-bottle__bottle -->
+
+			<div class="your-bottle__hand js-bottle-hand">
+					
+				<div class="your-bottle-bag__title">
+					Удобно держать в руке
+				</div><!-- /.your-bottle-bag__title -->
+
+				<div class="your-bottle-bag__text text">
+					<p>
+						Форма и размер бутылочки разработаны<br>
+						специально для детски ручек
+					</p>
+				</div><!-- /.your-bottle-bag__text text -->
+
+			</div><!-- /.your-bottle__hand -->
+
+			<div class="your-bottle__bag your-bottle-bag js-bottle-bag">
 				
-				<div class="your-bottle-bag__content">
+				<div class="your-bottle-bag__content js-bottle-bag-text">
 					
 					<div class="your-bottle-bag__title">
 						Помещается в рюкзак
@@ -296,6 +406,10 @@
 				</div><!-- /.your-bottle-bag__bag -->
 	
 			</div><!-- /.your-bottle__bag -->
+
+			<div class="your-bottle__bag-mask js-bottle-bag-mask">
+				
+			</div><!-- /.your-bottle-bag__mask -->
 
 		</div><!-- /.yours__bottle -->
 	

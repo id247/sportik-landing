@@ -4,6 +4,7 @@
 
 
 .calculator{
+	color: #014e9d;
 
 	&__start{
 		@include clearfix;
@@ -53,10 +54,12 @@
 		display: block;
 		margin: 0 0 10px;
 		font-size: 18px;
+		line-height: 23px;
 		white-space: nowrap;
 
 		strong{
 			font-weight: 700;
+			line-height: 21px;
 		}
 	}
 
@@ -99,7 +102,7 @@
  * ========================================================================== */
 
 .calc-form-checkbox{
-
+	cursor: pointer;
 	display: inline-block;
 	position: relative;
 	min-height: 28px;

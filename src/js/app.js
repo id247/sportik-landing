@@ -1,6 +1,8 @@
 'use strict';
 
-export default (function (window, document, $){
+export default function(){ 
+
+	(function (window, document, $){
 	console.log('run');
 
 	var maxHeight = 650;
@@ -476,9 +478,9 @@ export default (function (window, document, $){
 		quiz();
 		read();
 	}
+	
+	init();
 
-	return {
-		init 
-	}
+	})(window, document, jQuery, undefined);
 
-})(window, document, jQuery, undefined);
+}
