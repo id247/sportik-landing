@@ -219,7 +219,7 @@ export default (function (window, document, $){
 
 		const $important = $('#important');
 
-		if (!$important){
+		if ($important.length === 0){
 			return;
 		}
 
@@ -343,7 +343,7 @@ export default (function (window, document, $){
 
 		const $quiz = $('#quiz');
 
-		if (!$quiz){
+		if ($quiz.length === 0){
 			return;
 		}
 
@@ -414,7 +414,7 @@ export default (function (window, document, $){
 	function read(){
 		const $readBook = $('#read-book');
 
-		if (!$readBook){
+		if ($readBook.length === 0){
 			return;
 		}
 
@@ -469,7 +469,7 @@ export default (function (window, document, $){
 
 		scrollMeTo();
 		menu();
-		form();
+		//form();
 		modals();
 
 		important();

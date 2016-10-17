@@ -1,0 +1,244 @@
+/* ==========================================================================
+ * calculator
+ * ========================================================================== */
+
+
+.calculator{
+
+	&__start{
+		@include clearfix;
+	}
+
+	&__content{
+		float: left;
+		width: 40%;
+	}
+
+	&__title{
+		text-align: left;
+	}
+
+	&__text{
+		font-size: 17px;
+	}
+
+	&__form{
+		float: right;
+		width: 55%;
+		margin: 10px 0 0;
+	}
+
+	&__result{
+		display: none;
+	}
+}
+
+/* ==========================================================================
+ * calc-form
+ * ========================================================================== */
+
+.calc-form{
+
+	&__row{
+		margin: 0 0 20px;
+	}
+
+	&__col{
+		display: inline-block;
+		margin: 0 10px 0 0;
+		vertical-align: top;
+	}
+
+	&__label{
+		display: block;
+		margin: 0 0 10px;
+		font-size: 18px;
+		white-space: nowrap;
+
+		strong{
+			font-weight: 700;
+		}
+	}
+
+	&__select{
+	    width: 200px;
+	    height: 40px;
+	    padding: 0 10px;
+	    font-size: 15px;
+	    line-height: 40px;
+	    background-color: #fff;
+	    border: 0;
+	    border-radius: 4px;
+	}
+
+	&__input{
+		width: 140px;
+	    height: 40px;
+	    padding: 0 10px;
+	    line-height: 40px;
+	    font-size: 15px;
+	    background-color: #fff;
+	    border: 0;
+	    border-radius: 4px;
+	}
+
+	&__checkboxes{
+		max-width: 500px;
+	}
+
+	&__checkbox{
+		width: 200px;
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 15px 10px 0;
+	}
+}
+
+/* ==========================================================================
+ * calc-form-checkbox
+ * ========================================================================== */
+
+.calc-form-checkbox{
+
+	display: inline-block;
+	position: relative;
+	min-height: 28px;
+
+	&__input{
+		position: absolute;
+		left: -9999px;
+
+		&:checked + .calc-form-checkbox__text:after{
+			content: '';
+			@include sprite($calc-checkbox);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+
+	&__text{
+		display: block;
+		padding: 7px 0 0 35px;
+		&:before{
+			content: '';
+			background: #fff;
+			width: 28px;
+			height: 28px;
+			border-radius: 3px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+/* ==========================================================================
+ * calc-results
+ * ========================================================================== */
+
+.calc-results{
+
+	&__list{
+		margin: 0 0 -18px;
+	}
+
+	&__item{
+		margin: 0 0 10px;
+	}
+
+	&__total-water{
+		@include sprite($calc-total);
+		text-align: center;
+		margin: 0 0 15px;
+		padding: 20px 70px 20px 5px;
+		color: #fff;
+	}
+
+	&__total-water-number{
+		font-size: 34px;
+		font-weight: 700;
+	}
+
+	&__text{
+		background: #fff;
+		border-radius: 5px;
+		padding: 10px;
+		color: #e24d9b;
+		font-weight: 700;
+	}
+}
+
+.calc-results-item{
+	display: table;
+	width: 100%;
+	border-radius: 5px;
+	background: #b5e1f4;
+
+	&__col{
+		display: table-cell;
+		padding: 10px;
+		vertical-align: top;
+
+		&:first-child{
+			background: #fff;
+			border-radius: 5px 0 0 5px;
+		}
+
+		&:nth-child(1){
+			text-align: center;
+			width: 50px;
+		}
+
+		&:nth-child(2){
+			width: 70px;
+		}
+
+		&:nth-child(3){
+			width: 90px;
+		}
+	}	
+
+	&__icon{
+		display: inline-block;
+		text-indent: -9999px;
+
+		&--bottle{
+			@include sprite($calc-bottle);
+		}
+
+		&--glass{
+			@include sprite($calc-glass);
+		}
+	}
+
+	&__time{
+		text-align: center;
+		font-size: 14px;
+		&:before{
+			content: '';
+			display: block;
+			margin: 0 auto 5px;
+			@include sprite($calc-time);
+		}
+	}
+
+	&__water{
+		
+	}
+
+	&__water-number{
+		font-size: 24px;
+		font-weight: 700;
+	}
+
+	&__title{
+		font-size: 24px;
+		font-weight: 700;
+		margin: 0 0 10px;
+	}
+
+	&__text{
+		font-size: 16px;
+	}
+}
