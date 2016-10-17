@@ -1,11 +1,7 @@
-
 export default function(){
 
-	(function (window, document, $){
-	
-		//console.log(TweenMax);
-		//console.log(TimelineMax);
-		//
+	(function (window, document, $, TweenMax, TimelineMax){
+
 		
 		function skate(){
 			const $skate = $('.js-skate-animation');
@@ -76,7 +72,7 @@ export default function(){
    			 staggerFactor = .1,
     		scrollTweenDuration = .4;
 
-			const maxScroll = 4000;
+			const maxScroll = 10000;
 			const start = 3500;
 			
 			const tl1 = new TimelineMax({
@@ -114,7 +110,7 @@ export default function(){
 			    return Math.round(value * Math.pow(10, place)) / Math.pow(10, place);
 			}
 
-			$box.css('padding-top', '5500px');
+			$box.css('padding-top', '11000px');
 
 
 			tl1
@@ -133,6 +129,11 @@ export default function(){
 				y: 0,	
 				scale: 1,
 			}, '-=2')
+			.fromTo($hand, 0, {				
+				visibility: 'hidden',
+			},{				
+				visibility: 'visible',
+			})
 			.to($hand, 1,{
 				x: -600,
 				opacity: 1,	
@@ -151,6 +152,16 @@ export default function(){
 				opacity: 0,
 				rotation: '180deg',
 			}, '-=3')
+			.fromTo($bag, 0, {				
+				visibility: 'hidden',
+			},{				
+				visibility: 'visible',
+			})
+			.fromTo($bagMask, 0, {				
+				visibility: 'hidden',
+			},{				
+				visibility: 'visible',
+			})
 			.fromTo($bag, 1, {
 				y: 300,
 			},{
@@ -170,30 +181,7 @@ export default function(){
 				opacity: 1,
 				x: 0,
 			},'-=0')
-
-			// .to($bottle, .5, {
-			// 	x: 0,
-			// 	y: 1000,
-			// 	scale: .3,
-			// 	rotation: '345deg',
-			// })
-			// .to($skate, .5, {
-			// 	x: -250,
-			// 	y: 1130,
-			// 	scale: 1,
-			// }, '-=.5')
-			// ;
-
-
-			// $(document).on('scroll', function(){
-			// 	if (window.scrollY > 3600) {
-			// 		tl1.play();
-			// 	}else{
-			// 		tl1.reverse();
-			// 	}
-			// });
-
-			//tl1.play();
+			;
 
 			listenToScrollEvent();
 			onScroll();
@@ -205,46 +193,44 @@ export default function(){
 		function colors(){
 
 			const $sex = $('.js-select-sex');
-			const $colors = $('.js-select-color');
+			const $bottleColors = $('.js-select-color');
 			const $bottle = $('.js-bottle-animate');
 
-			console.log($colors);
-			console.log($colors.filter('[value="blue"]'));
+			console.log($bottleColors);
+			console.log($bottleColors.filter('[value="blue"]'));
 
 			function showColors(){
 				const sex = $sex.filter(':checked').val();
 				console.log(sex);
-				$colors.parent().parent().hide();
+				$bottleColors.parent().parent().hide();
 
 				if (sex === 'girl'){
-					$colors.filter('[value="yellow"]').prop('checked', true);
-					$colors.filter('[value="yellow"]').parent().parent().show();
-					$colors.filter('[value="red"]').parent().parent().show();
+					$bottleColors.filter('[value="yellow"]').prop('checked', true);
+					$bottleColors.filter('[value="yellow"]').parent().parent().show();
+					$bottleColors.filter('[value="red"]').parent().parent().show();
 				}else{
-					$colors.filter('[value="blue"]').prop('checked', true);
-					$colors.filter('[value="blue"]').parent().parent().show();
-					$colors.filter('[value="green"]').parent().parent().show();
+					$bottleColors.filter('[value="blue"]').prop('checked', true);
+					$bottleColors.filter('[value="blue"]').parent().parent().show();
+					$bottleColors.filter('[value="green"]').parent().parent().show();
 				}
 				showBottle();
 			}
 			showColors();
 
 			function showBottle(){
-				const color = $colors.filter(':checked').val();
+				const color = $bottleColors.filter(':checked').val();
 
 				$bottle.attr('data-color', color);
 			}
 
 			$sex.on('change', function(){
-				showColors();
-				
-			});
+				showColors();				
+			}); //sex
 
-			$colors.on('change', function(){
-				//showColors();
-				showBottle();
-			});
+			$bottleColors.on('change', showBottle); //colors
+
 		}
+
 		colors();
 
 	
