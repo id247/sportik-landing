@@ -139,15 +139,20 @@
 
 	&__select{
 		margin: 0 0 50px;
+		text-align: center;	
+
+		&--last{
+			margin: 0 0 -50px 250px;;
+			text-align: left;
+		}
 	}
 }
 
 .yours-select{
-	text-align: center;
 
 	&__title{
 		font-size: 20px;
-		opacity: .5;
+		opacity: .9;
 		margin: 0 0 20px;	
 	}
 
@@ -230,6 +235,14 @@
 	padding: 450px 0 0;
 	position: relative;
 
+	&__scroll{
+		position: absolute;
+		top: 0;
+		left: 230px;
+		font-size: 20px;
+		opacity: .9;
+	}
+
 	&__bottle{		
 
 		position: absolute;
@@ -241,17 +254,29 @@
 		width: image-width('../assets/images/bottles/blue.png');
 		height: image-height('../assets/images/bottles/blue.png');
 	
-		&[data-color="blue"]{
-			background-image: url(../images/bottles/blue.png);
+		&[data-color="boy-blue"]{
+			background-image: url(../images/bottles/b-blue.png);
 		}
-		&[data-color="red"]{
-			background-image: url(../images/bottles/red.png);
+		&[data-color="boy-red"]{
+			background-image: url(../images/bottles/b-red.png);
 		}
-		&[data-color="green"]{
-			background-image: url(../images/bottles/green.png);
+		&[data-color="boy-green"]{
+			background-image: url(../images/bottles/b-green.png);
 		}
-		&[data-color="yellow"]{
-			background-image: url(../images/bottles/yellow.png);
+		&[data-color="boy-yellow"]{
+			background-image: url(../images/bottles/b-yellow.png);
+		}	
+		&[data-color="girl-blue"]{
+			background-image: url(../images/bottles/g-blue.png);
+		}
+		&[data-color="girl-red"]{
+			background-image: url(../images/bottles/g-red.png);
+		}
+		&[data-color="girl-green"]{
+			background-image: url(../images/bottles/g-green.png);
+		}
+		&[data-color="girl-yellow"]{
+			background-image: url(../images/bottles/g-yellow.png);
 		}
 
 		&--fixed{

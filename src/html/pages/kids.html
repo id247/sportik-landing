@@ -2,101 +2,6 @@
 	"role": "kids"
 })
 
-<div class="container__modal modal" id="modal-pers">
-	
-	<div class="modal__bg js-modal-close"></div><!-- /.modal__bg -->
-	
-	<div class="modal__content modal-pers">
-
-		<div class="modal-pers__content">
-
-			<div class="modal-pers__logo-placeholder">
-				
-				<div class="modal-pers__logo">
-					
-				</div><!-- /.modal-pers__logo -->
-
-			</div><!-- /.modal-pers__logo-placeholder -->
-
-			<div class="modal-pers__title">
-				Выбери своего героя
-			</div><!-- /.modal-pers__title -->
-
-			<div class="modal-pers__text">
-				<p>
-					С кем ты хочешь подружиться? Выбери героя, который будет помогать тебе учиться, узнавать новое и соблюдать питьевой режим!
-				</p>
-			</div><!-- /.modal-pers__text -->
-
-			<div class="modal-pers__list">
-
-				<div class="modal-pers__item">
-				
-					<label class="modal-pers-item">
-
-						<input type="radio" name="pers" value="2" class="modal-pers-item__input js-pers-input">
-						
-						<img src="assets/images/choose-pers/1.png" alt="" class="modal-pers-item__image">
-
-						<img src="assets/images/choose-pers/1-gray.png" alt="" class="modal-pers-item__gray">
-						
-					</label><!-- /.modal-pers-item -->
-
-				</div><!-- /.modal-pers__item -->
-
-				<div class="modal-pers__item">
-				
-					<label class="modal-pers-item">
-
-						<input type="radio" name="pers" value="1" class="modal-pers-item__input js-pers-input">
-						
-						<img src="assets/images/choose-pers/2.png" alt="" class="modal-pers-item__image">
-
-						<img src="assets/images/choose-pers/2-gray.png" alt="" class="modal-pers-item__gray">
-						
-					</label><!-- /.modal-pers-item -->
-
-				</div><!-- /.modal-pers__item -->
-
-				<div class="modal-pers__item">
-				
-					<label class="modal-pers-item">
-
-						<input type="radio" name="pers" value="3" class="modal-pers-item__input js-pers-input">
-						
-						<img src="assets/images/choose-pers/3.png" alt="" class="modal-pers-item__image">
-
-						<img src="assets/images/choose-pers/3-gray.png" alt="" class="modal-pers-item__gray">
-						
-					</label><!-- /.modal-pers-item -->
-
-				</div><!-- /.modal-pers__item -->
-
-				<div class="modal-pers__item">
-				
-					<label class="modal-pers-item">
-
-						<input type="radio" name="pers" value="4" class="modal-pers-item__input js-pers-input">
-						
-						<img src="assets/images/choose-pers/4.png" alt="" class="modal-pers-item__image">
-
-						<img src="assets/images/choose-pers/4-gray.png" alt="" class="modal-pers-item__gray">
-						
-					</label><!-- /.modal-pers-item -->
-
-				</div><!-- /.modal-pers__item -->
-
-			</div><!-- /.modal-pers__list -->
-
-		</div><!-- /.modal-pers__content -->
-		
-		<button class="modal__close modal-pers__close button js-modal-close">
-			x
-		</button>
-
-	</div><!-- /.modal__content -->
-
-</div><!-- /.container__modal -->
 
 <section class="container__section section how-many-kid" id="how-many-kid">
 
@@ -127,7 +32,7 @@
 
 			<div class="how-many-kid__button-placeholder">
 						
-				<a href="sportik-quiz.html" class="how-many-kid__button button button--green-img">Сколько воды тебе нужно?</a>
+				<a href="sportik-quiz.html" class="how-many-kid__button button button--green-img" data-adriver="button_4">Сколько воды тебе нужно?</a>
 			
 			</div><!-- /.how-many-kid__button-placeholder -->
 
@@ -222,7 +127,7 @@
 
 		<div class="water-helps__button-placeholder">
 					
-			<a href="sportik-important.html" class="water-helps__button button button--yellow button--m">Узнать</a>
+			<a href="sportik-important.html" class="water-helps__button button button--yellow button--m"  data-adriver="button_9">Узнать</a>
 		
 		</div><!-- /.water-helps__button-placeholder -->
 	
@@ -249,14 +154,16 @@
 		<div class="yours__select yours-select">
 
 			<div class="yours-select__title">
-				Выбери этикетку:
+				1. Выбери этикетку:
 			</div><!-- /.yours-select__title -->
 
 			<ul class="yours-select__list">
 				
 				<li class="yours-select__item">
 					
-					<label class="yours-select-radio">
+					<label class="yours-select-radio"
+						 data-adriver="button_15"
+					>
 						
 						<input type="radio" name="image" class="yours-select-radio__input js-select-sex" value="girl" checked>
 
@@ -272,7 +179,9 @@
 				
 				<li class="yours-select__item">
 					
-					<label class="yours-select-radio">
+					<label class="yours-select-radio"
+						 data-adriver="button_15"
+					>
 						
 						<input type="radio" name="image" class="yours-select-radio__input js-select-sex" value="boy" >
 
@@ -293,14 +202,16 @@
 		<div class="yours__select yours-select">
 
 			<div class="yours-select__title">
-				Выбери цвет колпачка:
+				2. Выбери цвет колпачка:
 			</div><!-- /.yours-select__title -->
 
 			<ul class="yours-select__list">
 				
 				<li class="yours-select__item">
 					
-					<label class="yours-select-radio">
+					<label class="yours-select-radio"
+						 data-adriver="button_16"
+					>
 						
 						<input type="radio" name="color" class="yours-select-radio__input js-select-color" value="yellow" >
 
@@ -313,7 +224,9 @@
 				
 				<li class="yours-select__item">
 					
-					<label class="yours-select-radio">
+					<label class="yours-select-radio"
+						 data-adriver="button_16"
+					>
 						
 						<input type="radio" name="color" class="yours-select-radio__input js-select-color" value="blue" checked>
 
@@ -326,7 +239,9 @@
 				
 				<li class="yours-select__item">
 					
-					<label class="yours-select-radio">
+					<label class="yours-select-radio"
+						 data-adriver="button_16"
+					>
 						
 						<input type="radio" name="color" class="yours-select-radio__input js-select-color" value="green">
 
@@ -339,7 +254,9 @@
 				
 				<li class="yours-select__item">
 					
-					<label class="yours-select-radio">
+					<label class="yours-select-radio"
+						 data-adriver="button_16"
+					>
 						
 						<input type="radio" name="color" class="yours-select-radio__input js-select-color" value="red">
 
@@ -351,10 +268,16 @@
 				</li> <!-- /.yours-select__item -->
 			
 			</ul> <!-- /.yours-select__list -->
-			
+		
 		</div><!-- /.yours__select -->
 
 		<div class="yours__bottle your-bottle js-bottle-animate-box">
+
+			<div class="your-bottle__scroll">
+				<!-- <a href="#end" class="yours-select__title link js-goto" data-speed="4000"> -->
+					3. Крути страницу дальше!
+				<!-- </a> -->
+			</div><!-- /.your-bottle__scroll -->
 
 			<div class="your-bottle__skate skate js-bottle-skate-animate">
 
@@ -377,7 +300,7 @@
 				<div class="your-bottle-bag__text text">
 					<p>
 						Форма и размер бутылочки разработаны<br>
-						специально для детски ручек
+						специально для детских ручек
 					</p>
 				</div><!-- /.your-bottle-bag__text text -->
 
@@ -414,5 +337,7 @@
 		</div><!-- /.yours__bottle -->
 	
 	</div> <!-- /.yours__wrap -->
+
+	<div id="end"></div>
 
 </section> <!-- /.yours -->

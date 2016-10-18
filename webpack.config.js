@@ -101,7 +101,7 @@ const config = {
 	production: {
 		cache: true,
 		entry: {
-			[server]: ['babel-polyfill', './src/js/index'],
+			[server]: ['./src/js/index'],
 		},
 		output: {
 			path: __dirname + '/production/assets/js',

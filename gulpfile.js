@@ -141,6 +141,8 @@ gulp.task('html', function(callback){
 			context: {
 				server: server,
 				url: 'sportik',
+				comments: false,
+				page: '',
 			},
 			indent: true
 		}))

@@ -51,6 +51,7 @@ export default function(){
 
 		const $modalPers = $('#modal-pers');
 		const $menuPers = $('.js-menu-pers');
+		const $html = $('.html');
 
 		if ($menuPers.length === 0){
 			return;
@@ -63,8 +64,12 @@ export default function(){
 
 		function modal(){
 
+			console.log('modal');
+
 			const $persItems = $modalPers.find('.js-pers-input');
 			const $persItemsParent = $persItems.parent();
+
+			console.log($persItems);
 		
 			function activeInputs(){
 				if (store.cookies.chosenPers){
@@ -82,6 +87,7 @@ export default function(){
 					return false;
 				}
 
+				$html.addClass('html--modal');
 				$modalPers.addClass('modal--visible');
 			}			
 			
@@ -91,9 +97,14 @@ export default function(){
 				
 				store.cookies.chosenPers = persId;
 
+				console.log('dsfs');
+
 				setCookies();
 				activeInputs();
 				menu();
+				//$modalPers.removeClass('modal--visible');
+
+				$html.removeClass('html--modal');
 				$modalPers.removeClass('modal--visible');
 
 			});
@@ -111,6 +122,7 @@ export default function(){
 		}
 
 		$menuPers.on('click', function(){
+			$html.addClass('html--modal');
 			$modalPers.addClass('modal--visible');
 		});
 

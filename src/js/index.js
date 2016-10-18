@@ -4,6 +4,7 @@ import app from './app';
 import calculator from './calculator';
 import pers from './pers';
 import animate from './animate';
+import quiz from './quiz';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -11,5 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	calculator();
 	pers();
 	animate();
+	quiz();
 
 });   

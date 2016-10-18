@@ -124,18 +124,42 @@
 			content: '';
 			display: block;
 			margin: 0 auto 5px;
-			@include sprite($quiz-bar-0);
+			@include sprite($puzzle0);
 		}
 
 		&--1{
 			&:before{
-				@include sprite($quiz-bar-1);
+				@include sprite($puzzle1);
 			}
 		}
 
 		&--2{
 			&:before{
-				@include sprite($quiz-bar-2);
+				@include sprite($puzzle2);
+			}
+		}
+
+		&--3{
+			&:before{
+				@include sprite($puzzle3);
+			}
+		}
+
+		&--4{
+			&:before{
+				@include sprite($puzzle4);
+			}
+		}
+
+		&--5{
+			&:before{
+				@include sprite($puzzle5);
+			}
+		}
+
+		&--6{
+			&:before{
+				@include sprite($puzzle6);
 			}
 		}
 	}

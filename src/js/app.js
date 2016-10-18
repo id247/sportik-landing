@@ -30,6 +30,7 @@ export default function(){
 		$('.js-goto').on('click', function(e){
 			const paddingTop = $(window).width() > maxWidth ? $menu.outerHeight() : 0;
 			const $target = $(this.href.replace( /^.*\#/, '#' ) );
+			const speed = $(this).data('speed') ? $(this).data('speed') : 500;
 			
 			if ($target.length === 1) {
 				e.preventDefault();
@@ -37,7 +38,7 @@ export default function(){
 				$('body,html').animate({ 
 					scrollTop: $target.offset().top - paddingTop,
 					easing: 'ease-in'
-				}, 500);
+				}, speed);
 			};
 		});
 
@@ -87,9 +88,10 @@ export default function(){
 				var rectTop = Math.round(rect.top);
 				var rectBottom = Math.round(rect.bottom);
 
-				if (rectTop <= 60 && rectBottom / 2 <= winHeight ){
+				if (rectTop <= 60 //&& rectBottom / 2 <= winHeight 
+					){
 					$menuHrefs.removeClass('active');
-					$menuHrefs.filter('[href="#' + sectionId + '"]').addClass('active');
+					$menuHrefs.filter('[href*="' + sectionId + '"]').addClass('active');
 				}
 			});
 		}
@@ -182,9 +184,12 @@ export default function(){
 			$modals.removeClass(visibleClass);
 		}
 
-		$modalClose.on('click', function(e){
-			e.preventDefault();
-			hide();
+		$modalClose.on('click', function(e){		
+
+			if ($(e.target).hasClass('js-modal-close')){
+				e.preventDefault();
+				hide();
+			}
 		});
 
 		$modalOpen.on('click', function(e){
@@ -341,81 +346,6 @@ export default function(){
 		});
 	}	
 
-	function quiz(){
-
-		const $quiz = $('#quiz');
-
-		if ($quiz.length === 0){
-			return;
-		}
-
-		let currentQuestion = 0;
-
-		const $boxes = $quiz.find('.js-quiz-box');
-		const $nextQuestionButton = $quiz.find('.js-next-question');
-		const $select = $quiz.find('.js-select');
-		const $resultBottles = $quiz.find('.js-result-bottles');
-		const $resultBottlesCount = $quiz.find('.js-result-bottles-count');
-		const resultBottleHtml = $resultBottles.html();
-
-		function render(){
-			$boxes.hide().eq(currentQuestion).show();
-		}
-
-		function nextQuestion(){
-
-			if (currentQuestion === $boxes.length - 1){
-				currentQuestion = 1;
-			}else{
-				currentQuestion++;
-			}		
-
-			if (currentQuestion === $boxes.length - 2 ){
-				results();
-			}
-
-			render();
-		}
-
-		function results(){
-			const $radios = $quiz.find('input[type="radio"]:checked');
-
-			let count = 0;
-			let html = '';
-
-			$radios.each(function(){
-				count += parseInt(this.value);
-			});
-
-			for (let i = 0; i < count ; i++){
-				html += resultBottleHtml;
-			}
-
-			$resultBottles.html(html);
-
-			const resultCount = count === 1 ? count + ' БУТЫЛОЧКА' : count + ' БУТЫЛОЧКИ'
-
-			$resultBottlesCount.html(resultCount);
-
-		}
-
-		$nextQuestionButton.on('click', function(e){
-			e.preventDefault();
-
-			nextQuestion();
-		});
-
-		$select.on('change', function(e){			
-
-			if (this.value !== ''){
-				$(this).parents('.js-quiz-box').find('.js-next-question').attr('disabled', false);
-			}else{
-				$(this).parents('.js-quiz-box').find('.js-next-question').attr('disabled', true);
-			}
-		});
-
-	}
-
 	function read(){
 		const $readBook = $('#read-book');
 
@@ -465,6 +395,19 @@ export default function(){
 
 	}
 
+	function adriver(){
+		const $links = $('[data-adriver]');
+
+		$links.on('click', function(){
+
+			if (typeof ar_sendPixel === 'function'){
+				ar_sendPixel( $(this).data('adriver') );
+			}
+		
+		});
+
+	}
+
 
 	function init(){
 
@@ -478,8 +421,8 @@ export default function(){
 		modals();
 
 		important();
-		quiz();
 		read();
+		adriver();
 	}
 	
 	init();

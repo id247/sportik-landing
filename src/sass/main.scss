@@ -136,14 +136,22 @@
 	&__href{
 		text-transform: uppercase;
 		&:hover,
+		&--active,
 		&.active{
 			opacity: .5;
+		}
+
+		&--dnevnik{
+			margin-top: 3px;
+			display: inline-block;
+			@include sprite($logo-hand);
 		}
 	}
 }
 
 .menu-pers{
 	display: block;
+	cursor: pointer;
 	//display: none;
 	text-indent: -9999px;
 	text-align: left;
@@ -180,6 +188,8 @@
 		margin: 0 auto;
 	}
 
+
+
 	&__title{
 		text-align: left;
 	}
@@ -187,6 +197,80 @@
 	&__text{
 		font-size: 18px;
 		color: #333333;
+		margin: 0 0 50px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	&__nav{
+		
+	}
+
+	&__expert{
+		margin: 0 -80px 30px;
+	}
+}
+
+.article-nav{
+
+	&__title{
+		font-weight: 700;
+		font-size: 20px;
+		margin: 0 0 1em;
+	}
+
+	&__list{
+		margin: 0 0 0;
+	}
+
+	&__item{
+		margin: 0 0 1em;
+	}
+}
+
+.expert{
+	padding: 20px 80px;
+	background: #e1f1f7;
+
+	&__image-placeholder{
+		float: left;
+		margin: 0 15px 0 0;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	&__image{
+		display: block;
+	}
+
+	&__content{
+		margin: 0 0 0 120px;
+	}
+
+	&__title{
+		font-size: 18px;
+		margin: 0 0 7px;
+		color: #383838;
+	}
+
+	&__text{
+		font-size: 16px;
+		color: #8f8f8f;
+		margin: 0 0 7px;
+	}
+
+	&__buttons{
+		
+	}
+	&__button-placeholder{
+		display: inline-block;
+		margin: 0 15px 0 0;
+	}
+
+	&__button{
+		font-size: 16px;
+		padding: 9px 20px 9px;
 	}
 }
 
@@ -515,7 +599,7 @@
 	right: 0;
 	bottom: 0;
 	z-index: 1000;
-	padding: 10%;
+
 
 	display: flex;
 	flex-flow: column;
@@ -525,13 +609,23 @@
 	opacity: 0;
 	visibility: hidden;
 
+
 	&--visible{
 		opacity: 1;
 		visibility: visible;
 	}
 
+	&__inner{
+		position: relative;
+		padding: 50px 0;
+		margin: auto;
+		overflow: auto;
+		width: 100%;
+
+	}
+
 	&__bg{
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
@@ -545,6 +639,11 @@
 		position: relative;
 		background: #fff;
 		border-radius: 5px;
+
+		&--text{
+			max-width: 1000px;
+			padding: 30px;
+		}
 	}
 
 	&__close{
@@ -667,4 +766,17 @@
 		left: 0;
 	}
 
+}
+
+/* ==========================================================================
+ * comments-section
+ * ========================================================================== */
+
+.comments-section{
+	margin-top: -100px;
+	
+	&__content{
+		max-width: 1000px;
+		margin: auto;
+	}
 }

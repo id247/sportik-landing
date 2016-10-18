@@ -8,10 +8,11 @@
 				Как отучить ребёнка от газировки?
 			</h2>
 
+			@@include("../common/expert.html", {})
 
 			<div class="article__text text">
 				
-				<img src="assets/images/articles/1.jpg" alt="">
+				<!-- <img src="assets/images/articles/1.jpg" alt=""> -->
 
 				<p>
 					Сладкие газированные лимонады ярких цветов — всегда желанное лакомство для ребёнка. Очарованные внешним видом напитка и его выразительным вкусом, дети снова и снова требуют купить им очередную бутылку, а родители хватаются за голову: как объяснить, что газировка не просто вредна, но даже опасна для здоровья?
@@ -64,17 +65,24 @@
 
 				<ul>
 					<li>
-						<a href="sportik-parents.html#videos">Что будет если вскипятить газировку?</a>
+						<a href="https://www.youtube.com/watch?v=XQu8TTBmGhA" class="js-modal-video-open">Что будет если вскипятить газировку?</a>
 					</li>
 					<li>
-						<a href="sportik-parents.html#videos">Выживут ли цветы в газировке?</a>
+						<a href="https://www.youtube.com/watch?v=XQu8TTBmGhA" class="js-modal-video-open">Выживут ли цветы в газировке?</a>
 					</li>
 				</ul>
 				
 			</div><!-- /.article__text text -->
 
+			@@include("../common/article-nav.html", {
+				"current": 4
+			})
+
 		</div><!-- /.article__content -->
 	
 	</div> <!-- /.article__wrap -->
+
+
+	@@include("../common/modal-video.html", {})
 
 </section> <!-- /.article -->

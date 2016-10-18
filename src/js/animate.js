@@ -10,7 +10,7 @@ export default function(){
 			if ($skate.length === 0){
 				return;
 			}
-			console.log('skate');
+			//console.log('skate');
 
 			const tl1 = new TimelineMax({
 				paused: true
@@ -62,6 +62,10 @@ export default function(){
 			const $bag = $('.js-bottle-bag');
 			const $bagMask = $('.js-bottle-bag-mask');
 			const $bagText = $('.js-bottle-bag-text');
+
+			if ($bottle.length === 0){
+				return;
+			}
 			
 			var scrollTimeout = null,
    			scrollTimeoutDelay = 20,
@@ -72,7 +76,7 @@ export default function(){
    			 staggerFactor = .1,
     		scrollTweenDuration = .4;
 
-			const maxScroll = 10000;
+			const maxScroll = 5000;
 			const start = 3500;
 			
 			const tl1 = new TimelineMax({
@@ -98,7 +102,7 @@ export default function(){
 					currentScrollProgress = 0;
 					$bottle.removeClass('your-bottle__bottle--fixed');
 				}
-			    console.log(currentScrollProgress);
+			    //console.log(currentScrollProgress);
 			    //timeline.progress(currentScrollProgress); // either directly set the [progress] of the timeline which may produce a rather jumpy result
 			    TweenMax.to(tl1, scrollTweenDuration, {
 			        progress: currentScrollProgress,
@@ -110,17 +114,17 @@ export default function(){
 			    return Math.round(value * Math.pow(10, place)) / Math.pow(10, place);
 			}
 
-			$box.css('padding-top', '11000px');
+			$box.css('padding-top', '6000px');
 
 
 			tl1
-			.to($bottle, 5, {
+			.to($bottle, 1, {
 				x: 0,
 				y: -120,
 				scale: .35,
 				rotation: '345deg',
-			}, '+=2')
-			.fromTo($skate, 2,{
+			})
+			.fromTo($skate, 1,{
 				x: 1500,
 				y: 0,
 				scale: 0,
@@ -128,53 +132,53 @@ export default function(){
 				x: 72,
 				y: 0,	
 				scale: 1,
-			}, '-=2')
+			}, '-=1')
 			.fromTo($hand, 0, {				
 				visibility: 'hidden',
 			},{				
 				visibility: 'visible',
 			})
-			.to($hand, 1,{
+			.to($hand, .5,{
 				x: -600,
 				opacity: 1,	
 			})
-			.to($hand, 1,{
+			.to($hand, .5,{
 				//x: -600,
 				opacity: 0,	
-			}, '+=4')
-			.to($bottle, 2, {
+			}, '+=1')
+			.to($bottle, .5, {
 				y: 200,
 				rotation: '368deg',
-			})
-			.to($skate, 3, {
+			}, '-=0')
+			.to($skate, .5, {
 				x: -900,
 				y: -500,
 				opacity: 0,
 				rotation: '180deg',
-			}, '-=3')
+			}, '-=.5')
 			.fromTo($bag, 0, {				
 				visibility: 'hidden',
 			},{				
 				visibility: 'visible',
-			})
+			}, '-=.5')
 			.fromTo($bagMask, 0, {				
 				visibility: 'hidden',
 			},{				
 				visibility: 'visible',
-			})
-			.fromTo($bag, 1, {
+			}, '-=.5')
+			.fromTo($bag, .7, {
 				y: 300,
 			},{
 				opacity: 1,
 				y: 0,
 			},'-=0')
-			.fromTo($bagMask, 1, {
+			.fromTo($bagMask, .7, {
 				y: 300,
 			},{
 				opacity: 1,
 				y: 0,
-			},'-=1')
-			.fromTo($bagText, 1, {
+			},'-=.7')
+			.fromTo($bagText, .5, {
 				opacity: 0,
 				x: -300,
 			},{
@@ -196,38 +200,25 @@ export default function(){
 			const $bottleColors = $('.js-select-color');
 			const $bottle = $('.js-bottle-animate');
 
-			console.log($bottleColors);
-			console.log($bottleColors.filter('[value="blue"]'));
-
-			function showColors(){
-				const sex = $sex.filter(':checked').val();
-				console.log(sex);
-				$bottleColors.parent().parent().hide();
-
-				if (sex === 'girl'){
-					$bottleColors.filter('[value="yellow"]').prop('checked', true);
-					$bottleColors.filter('[value="yellow"]').parent().parent().show();
-					$bottleColors.filter('[value="red"]').parent().parent().show();
-				}else{
-					$bottleColors.filter('[value="blue"]').prop('checked', true);
-					$bottleColors.filter('[value="blue"]').parent().parent().show();
-					$bottleColors.filter('[value="green"]').parent().parent().show();
-				}
-				showBottle();
+			if ($sex.length === 0){
+				return;
 			}
-			showColors();
 
 			function showBottle(){
 				const color = $bottleColors.filter(':checked').val();
+				const sex = $sex.filter(':checked').val();
 
-				$bottle.attr('data-color', color);
+				$bottle.attr('data-color', sex + '-' +color);
 			}
+			showBottle();
 
 			$sex.on('change', function(){
-				showColors();				
+				showBottle();				
 			}); //sex
 
-			$bottleColors.on('change', showBottle); //colors
+			$bottleColors.on('change', function(){
+				showBottle();				
+			}); //bottleColors
 
 		}
 

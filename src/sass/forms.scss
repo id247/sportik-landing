@@ -49,6 +49,7 @@
 		}
 	}
 
+	&--comments,
 	&--blue{
 		background: $blue;
 		color: #fff;
@@ -89,6 +90,13 @@
 		&:active{
 			//background: darken($green, 5%);
 		}
+	}
+
+	&--s{
+		border-radius: 4px;
+		font-weight: 400;
+		font-size: 15px;
+		padding: 6px 20px 6px;
 	}
 
 	&--m{

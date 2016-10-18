@@ -29,15 +29,50 @@
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-2883817-3', 'auto');
+	  ga('create', 'UA-85680372-2', 'auto');
 	  ga('send', 'pageview');
 
 	</script>
+
+
+	 <script type="text/javascript">				
+	         function ar_sendPixel(sz) {				
+	                 var src = 'http://ad.adriver.ru/cgi-bin/rle.cgi?sid=215626&sz='				
+	 + sz + '&bt=21&pz=0&rnd=' + Math.round(Math.random() * 1000000000);				
+	                 if(document.createElement && document.body) {				
+	                 var i = document.createElement('img');				
+	                         i.style.position = 'absolute';				
+	                         i.style.width = i.style.height = '0px';				
+	                         i.src = src;				
+	                         document.body.insertBefore(i, document.body.firstChild);				
+	                 } else {				
+	                         new Image().src = src				
+	                 }				
+	         }				
+	 </script>	
+
 	}
 	
 
 </head>
 <body class="html__body">
+
+@@if (server !== "local"){
+
+<div  style="position: absolute; visibility: hidden;">
+
+<!--  AdRiver code START. Type:counter(zeropixel) Site: https://a -->
+<script type="text/javascript">
+var RndNum4NoCash = Math.round(Math.random() * 1000000000);
+var ar_Tail='unknown'; if (document.referrer) ar_Tail = escape(document.referrer);
+document.write('<img src="' + ('https:' == document.location.protocol ? 'https:' : 'http:') + '//ad.adriver.ru/cgi-bin/rle.cgi?' + 'sid=215626&bt=21&pz=0&rnd=' + RndNum4NoCash + '&tail256=' + ar_Tail + '" border=0 width=1 height=1>')
+</script>
+<noscript><img src="//ad.adriver.ru/cgi-bin/rle.cgi?sid=215626&bt=21&pz=0&rnd=1823122478" border=0 width=1 height=1></noscript>
+<!--  AdRiver code END  -->
+
+</div>
+
+}
 
 	<div class="container">
 
