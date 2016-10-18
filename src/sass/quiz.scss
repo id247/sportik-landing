@@ -181,7 +181,7 @@
 
 	&__answer{
 		display: inline-block;
-		vertical-align: top;
+		vertical-align: middle;
 		margin: 0 15px;
 	}
 
@@ -202,7 +202,7 @@
 
 .quiz-radio{
 	display: block;
-	height: 38px;
+	min-height: 38px;
 	color: #4e4e4e;
 
 	&__input{
@@ -227,6 +227,8 @@
 			position: absolute;
 			top: 0;
 			left: 0;
+			bottom: 0;
+			margin: auto;
 			@include sprite($radio);
 		}
 	}	

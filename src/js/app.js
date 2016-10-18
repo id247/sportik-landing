@@ -392,7 +392,10 @@ export default function(){
 			}
 
 			$resultBottles.html(html);
-			$resultBottlesCount.html(count);
+
+			const resultCount = count === 1 ? count + ' БУТЫЛОЧКА' : count + ' БУТЫЛОЧКИ'
+
+			$resultBottlesCount.html(resultCount);
 
 		}
 

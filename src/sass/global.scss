@@ -91,6 +91,23 @@ sup{
 			margin: 0;
 		}
 	}
+
+	ul,
+	li{
+		margin: 0 0 0 20px;
+	}
+
+	ul{
+		list-style-type: disc;
+	}
+
+	ol{
+		list-style-type: decimal;
+	}
+
+	li{
+		margin: 0 0 1em;
+	}
 	
 	a{
 		border-bottom: 1px solid;
