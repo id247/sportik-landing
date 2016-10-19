@@ -72,7 +72,7 @@
 			}	
 
 			.quiz__content{
-				max-width: 550px;
+				max-width: 700px;
 				margin: auto;
 			}	
 		}
@@ -207,6 +207,11 @@
 		display: inline-block;
 		vertical-align: middle;
 		margin: 0 15px;
+
+		&--last{
+			width: 360px;
+			margin-right: -255px;
+		}
 	}
 
 	&__select{
@@ -245,6 +250,7 @@
 		position: relative;
 		line-height: 38px;
 		padding: 0 0 0 50px;
+		white-space: nowrap;
 
 		&:before{
 			content: '';

@@ -36,6 +36,10 @@
 		background: #68d4fe url(../images/bg/pattern3.png) 0 0 repeat;
 	}
 
+	&--bg-blue-ligth2{
+		background: #a3dbf1 url(../images/bg/pattern.png) 0 0 repeat;
+	}
+
 	&__wrap{
 		@include clearfix;
 		max-width: 1200px;
@@ -187,6 +191,132 @@
 
 	&[data-menu-pers="4"]{
 		@include sprite($girl2);
+	}
+}
+
+/* ==========================================================================
+ * why
+ * ========================================================================== */
+
+.why{
+	padding: 50px 0 50px;
+	position: relative;
+
+	&__road{
+		height: 300px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: url(../images/bg/road-left.png) 0 100% no-repeat;
+		
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url(../images/bg/road-right.png) 100% 100% no-repeat;
+		}
+	}
+
+	&__wrap{
+		position: relative;
+	}
+
+	&__box{
+		max-width: 1160px;
+		padding: 50px 30px;
+		background: #f0fafe;
+		text-align: center;
+		border-radius: 5px;
+		box-shadow: 0 0 10px #60bade,
+					0 3px 0 #60bade;
+
+		margin: 0 auto 40px;
+	}
+
+	&__list{
+		text-align: center;
+		margin: 0 -1% -30px;
+	}
+	
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		width: 22.5%;
+		margin: 0 1% 30px;
+		
+		&:before{
+			content: '';
+			display: block;
+			margin: 0 auto 20px;
+		}
+	
+		&--1:before{
+			@include sprite($why-1);
+		}
+	
+		&--2:before{
+			@include sprite($why-2);
+		}
+	
+		&--3:before{
+			@include sprite($why-3);
+		}
+	
+		&--4:before{
+			@include sprite($why-4);
+		}
+	
+		&--5:before{
+			@include sprite($why-5);
+		}
+	
+		&--6:before{
+			@include sprite($why-6);
+		}
+	
+		&--7:before{
+			@include sprite($why-7);
+		}
+	
+		&--8:before{
+			@include sprite($why-8);
+		}
+	}
+
+	&__text{
+		text-align: center;
+		margin: 0 auto 30px;
+		max-width: 900px;
+	}
+
+	&__perses{
+		text-align: center;
+	}
+
+	&__pers{
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 10px;
+
+		&--1{
+			@include sprite($why-pers-1);
+		}
+
+		&--2{
+			@include sprite($why-pers-2);
+		}
+
+		&--3{
+			@include sprite($why-pers-3);
+		}
+
+		&--4{
+			@include sprite($why-pers-4);
+		}
 	}
 }
 

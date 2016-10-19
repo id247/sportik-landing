@@ -77,8 +77,8 @@ export default function(){
     		scrollTweenDuration = .4;
 
 			const maxScroll = 5000;
-			const start = 3500;
-			
+			const start = $box.offset().top + $bottle.height() / 2 - $(window).height() / 2 ; //; 3500;
+
 			const tl1 = new TimelineMax({
 				paused: true
 			});
@@ -93,7 +93,7 @@ export default function(){
 			}
 
 			function onScroll() {
-			    console.log(window.scrollY);
+			    //console.log(window.scrollY);
 
 			    if (window.scrollY > start){
 					$bottle.addClass('your-bottle__bottle--fixed');

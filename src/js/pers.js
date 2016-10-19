@@ -58,18 +58,14 @@ export default function(){
 		}
 
 		function menu(){
-			console.log(store.cookies.chosenPers);
+
 			$menuPers.attr('data-menu-pers', store.cookies.chosenPers);
 		}
 
 		function modal(){
 
-			console.log('modal');
-
 			const $persItems = $modalPers.find('.js-pers-input');
 			const $persItemsParent = $persItems.parent();
-
-			console.log($persItems);
 		
 			function activeInputs(){
 				if (store.cookies.chosenPers){
@@ -96,8 +92,6 @@ export default function(){
 				const persId = this.value;
 				
 				store.cookies.chosenPers = persId;
-
-				console.log('dsfs');
 
 				setCookies();
 				activeInputs();

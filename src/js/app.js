@@ -53,9 +53,6 @@ export default function(){
 
 		$menu.css('height', $menuSection.outerHeight());
 
-		console.log( $menuSection.height());
-
-
 		function fix(){
 			const scrollTop = $(window).scrollTop();
 			const showPosition = $header.outerHeight();
@@ -106,60 +103,6 @@ export default function(){
 		$(window).on('resize', function(e){
 			winHeight = ( window.innerHeight || document.documentElement.clientHeight );			
 			setActive();
-		});
-
-	}
-
-	/*
-		submit form
-	*/
-
-	function form(){		
-
-
-		$('form').each( function(){
-
-			const $form = $(this);
-			const $button = $form.find('button[type="submit"]');
-			const $success = $form.find('.order-form__success');
-			
-			$success.hide();
-
-			$form.on('submit', function(e){
-
-				e.preventDefault();
-
-				const form = e.target;
-
-
-				$button.text('Отправка данных...');
-				$button.attr('disabled', true);
-
-				$.ajax({
-					url: $form.attr('action'), 
-				    method: 'POST',
-				    data: $form.serialize(),
-				    dataType: 'json',
-				    success: function( response ) {
-				    	console.log(response);
-						$success.html('Спасибо! Ваша заявка была успешно отправлена!');
-						$success.removeClass('order-form__success--error');	
-				    },
-				    error: function(xhr, ajaxOptions, error){
-				    	console.log('Data could not be saved.' + error.message);
-						$success.addClass('order-form__success--error');
-						$success.html('Ошибка сохранения данных, попробуйте еще раз. Если ошибка повторится - свяжитесь с нами.');
-
-				    },
-				    complete: function(){					    	
-				    	$success.show();
-						$button.attr('disabled', false).text('Отправить заявку');			    	
-				    }
-				});				
-				
-				
-
-			});
 		});
 
 	}
@@ -219,10 +162,6 @@ export default function(){
 			show('#modal-video-player');
 		});
 	}
-
-	/* ==========================================================================
-	 * important
-	 * ========================================================================== */
 
 
 	function important(){
@@ -427,6 +366,8 @@ export default function(){
 
 	function adRiverSend(label){
 
+		console.log(label);
+
 		if (typeof ar_sendPixel === 'function'){
 			ar_sendPixel( label );
 		}
@@ -437,8 +378,9 @@ export default function(){
 		const $links = $('[data-adriver]');
 
 
-		$links.on('click', function(){
+		$links.on('click', function(e){
 
+			console.log(e.target);
 			adRiverSend( $(this).data('adriver') );
 		
 		});
