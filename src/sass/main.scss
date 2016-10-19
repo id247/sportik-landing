@@ -8,6 +8,8 @@
 	position: relative;
 	min-height: 100vh;
 
+	//padding-top: 280px;
+
 	&__section{
 		
 	}
@@ -74,6 +76,13 @@
 	height: image-height('../assets/images/bg/header.jpg');
 	position: relative;
 
+	// position: fixed;
+	// top: 0;
+	// left: 0;
+	// right: 0;
+	// z-index: 500;
+	// transform: translateZ(0);
+
 	&__href{
 		position: absolute;
 		top: 20px;
@@ -91,6 +100,13 @@
  * ========================================================================== */
 
 .menu{
+
+	// position: fixed;
+	// top: image-height('../assets/images/bg/header.jpg');
+	// left: 0;
+	// right: 0;
+	// z-index: 500;
+	// transform: translateZ(0);
 
 	&--scrolled{
 		.menu__section{
@@ -350,7 +366,7 @@
 		display: block;
 
 		&:hover{
-			.check-item{
+			.image-links-item{
 				&__text{
 					border-color: transparent;
 				}

@@ -24,13 +24,37 @@
 
 			<div class="expert__button-placeholder">
 
-				<a href="#expert-modal" class="expert__button button button--blue button--m js-modal-open">Об эксперте</a>
+				<a href="#expert-modal" class="expert__button button button--blue button--m js-modal-open"
+				
+				@@if (article === 3){
+				data-adriver="button_18"
+				}
+				@@if (article === 4){
+				data-adriver="button_21"
+				}
+				@@if (article === 5){
+				data-adriver="button_24"
+				}
+
+				>Об эксперте</a>
 
 			</div><!-- /.expert__button-placeholder -->
 
 			<div class="expert__button-placeholder">
 
-				<a href="#comments-section" class="expert__button button button--blue button--m js-goto">Задать вопрос</a>
+				<a href="#comments-section" class="expert__button button button--blue button--m js-goto"
+				
+				@@if (article === 3){
+				data-adriver="button_19"
+				}
+				@@if (article === 4){
+				data-adriver="button_22"
+				}
+				@@if (article === 5){
+				data-adriver="button_25"
+				}
+
+				>Задать вопрос</a>
 
 			</div><!-- /.expert__button-placeholder -->
 

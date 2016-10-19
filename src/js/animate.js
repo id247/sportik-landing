@@ -20,7 +20,7 @@ export default function(){
 			.set($skate, {
 				zIndex: 300,
 			})
-			.fromTo($skate, 1, {
+			.fromTo($skate, .5, {
 				transform: 'translateY(1000px) scale(0)',
 			}, {
 				transform: 'translateY(0px) scale(1)',
@@ -37,7 +37,7 @@ export default function(){
 			;
 
 			function run(){
-				if ($(document).scrollTop() > 800){
+				if ($(document).scrollTop() > 600){
 					tl1.play();
 				}else{
 					tl1.reverse();
@@ -145,9 +145,10 @@ export default function(){
 			.to($hand, .5,{
 				//x: -600,
 				opacity: 0,	
-			}, '+=1')
+			}, '+=0')
 			.to($bottle, .5, {
 				y: 200,
+				//y: 30,
 				rotation: '368deg',
 			}, '-=0')
 			.to($skate, .5, {
@@ -171,7 +172,7 @@ export default function(){
 			},{
 				opacity: 1,
 				y: 0,
-			},'-=0')
+			},'-=.5')
 			.fromTo($bagMask, .7, {
 				y: 300,
 			},{
