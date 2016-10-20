@@ -29,6 +29,7 @@
 		top: 116px;
 		left: 50%;
 		margin: 0 0 0 -30px; 
+		visibility: hidden;
 	}
 }
 
@@ -60,10 +61,10 @@
 
 
 /* ==========================================================================
- * ineresting
+ * interesting
  * ========================================================================== */
 
-.ineresting{
+.interesting{
 	margin: -100px 0 0;
 	padding: 180px 0 50px;
 	position: relative;
@@ -174,9 +175,9 @@
 		left: -9999px;
 
 		&:checked + .yours-select-radio__image-placeholder{
-			box-shadow: none;
+			box-shadow: 0 2px 15px rgba(0,0,0,.8);
 			&:before{
-				display: none;
+				display: block;
 			}
 		}
 
@@ -188,7 +189,7 @@
 	&__image-placeholder{
 		display: block;
 		position: relative;
-		box-shadow: 0 2px 15px rgba(0,0,0,.8);
+		
 
 		&:before{
 			content: '';
@@ -198,6 +199,7 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
+			display: none;
 		}
 	}
 
@@ -313,7 +315,7 @@
 		right: 125px;
 		opacity: 0;
 		visibility: hidden;
-		margin: 0 0 -380px;
+		margin: 0 0 -190px;
 	}
 
 	&__bag-mask{
@@ -323,12 +325,20 @@
 		position: absolute;
 		bottom: 50%;
 		left: 50%;	
-		margin: 0 0 -300px -64px;	
+		margin: 0 0 -110px -64px;	
 		z-index: 400;
 		opacity: 0;
 		visibility: hidden;
 
 		position: fixed;
+	}
+
+	&__back-palceholder{
+		text-align: center;
+	}
+
+	&__back{
+		border-bottom-style: dotted; 
 	}
 
 }

@@ -4,6 +4,7 @@ export default function(){
 
 		
 		function skate(){
+			const $skateSection = $('#how-many-kid');
 			const $skate = $('.js-skate-animation');
 			let visible = false;
 
@@ -19,6 +20,7 @@ export default function(){
 			tl1
 			.set($skate, {
 				zIndex: 300,
+				visibility: 'visible',
 			})
 			.fromTo($skate, .5, {
 				transform: 'translateY(1000px) scale(0)',
@@ -37,7 +39,7 @@ export default function(){
 			;
 
 			function run(){
-				if ($(document).scrollTop() > 600){
+				if ($(document).scrollTop() > $skateSection.offset().top - 400){
 					tl1.play();
 				}else{
 					tl1.reverse();
@@ -67,24 +69,27 @@ export default function(){
 				return;
 			}
 			
-			var scrollTimeout = null,
-   			scrollTimeoutDelay = 20,
-    		currentScrollProgress = 0;
+			let scrollTimeout = null;
+   			const scrollTimeoutDelay = 5;
+    		let currentScrollProgress = 0;
 			
-			var     duration = .4,
-   			 ease = Power2.easeOut,
-   			 staggerFactor = .1,
-    		scrollTweenDuration = .4;
+			const duration = .4;
+   			const ease = Power2.easeOut;
+   			const staggerFactor = .1;
+    		const scrollTweenDuration = .4;
 
-			const maxScroll = 5000;
-			const start = $box.offset().top + $bottle.height() / 2 - $(window).height() / 2 ; //; 3500;
+			const maxScroll = 2000;
+			let start = $box.offset().top + $bottle.height() / 2 - $(window).height() / 2 ; //; 3500;
+			console.log(start);
 
 			const tl1 = new TimelineMax({
 				paused: true
 			});
 			
 			function listenToScrollEvent() {
-			    (window.addEventListener) ? window.addEventListener('scroll', debounceScroll, false) : window.attachEvent('onscroll', debounceScroll);
+			    (window.addEventListener) 
+			    ? window.addEventListener('scroll', debounceScroll, false) 
+			    : window.attachEvent('onscroll', debounceScroll);
 			}
 
 			function debounceScroll() {
@@ -93,7 +98,9 @@ export default function(){
 			}
 
 			function onScroll() {
-			    //console.log(window.scrollY);
+			    //console.log(window.scrollY);			    //
+			    
+			    start = $box.offset().top + $bottle.height() / 2 - $(window).height() / 2 ;
 
 			    if (window.scrollY > start){
 					$bottle.addClass('your-bottle__bottle--fixed');
@@ -114,17 +121,17 @@ export default function(){
 			    return Math.round(value * Math.pow(10, place)) / Math.pow(10, place);
 			}
 
-			$box.css('padding-top', '6000px');
+			$box.css('padding-top', maxScroll + 500 + 'px');
 
 
 			tl1
-			.to($bottle, 1, {
+			.to($bottle, .3, {
 				x: 0,
 				y: -120,
 				scale: .35,
 				rotation: '345deg',
 			})
-			.fromTo($skate, 1,{
+			.fromTo($skate, .3,{
 				x: 1500,
 				y: 0,
 				scale: 0,
@@ -132,7 +139,7 @@ export default function(){
 				x: 72,
 				y: 0,	
 				scale: 1,
-			}, '-=1')
+			}, '-=.3')
 			.fromTo($hand, 0, {				
 				visibility: 'hidden',
 			},{				
@@ -142,12 +149,8 @@ export default function(){
 				x: -600,
 				opacity: 1,	
 			})
-			.to($hand, .5,{
-				//x: -600,
-				opacity: 0,	
-			}, '+=0')
 			.to($bottle, .5, {
-				y: 200,
+				y: 10,
 				//y: 30,
 				rotation: '368deg',
 			}, '-=0')
@@ -156,6 +159,10 @@ export default function(){
 				y: -500,
 				opacity: 0,
 				rotation: '180deg',
+			}, '-=.5')
+			.to($hand, .2,{
+				//x: -600,
+				opacity: 0,	
 			}, '-=.5')
 			.fromTo($bag, 0, {				
 				visibility: 'hidden',
@@ -167,25 +174,25 @@ export default function(){
 			},{				
 				visibility: 'visible',
 			}, '-=.5')
-			.fromTo($bag, .7, {
-				y: 300,
+			.fromTo($bag, .5, {
+				y: 500,
 			},{
 				opacity: 1,
 				y: 0,
 			},'-=.5')
-			.fromTo($bagMask, .7, {
-				y: 300,
+			.fromTo($bagMask, .5, {
+				y: 500,
 			},{
 				opacity: 1,
 				y: 0,
-			},'-=.7')
+			},'-=.5')
 			.fromTo($bagText, .5, {
 				opacity: 0,
 				x: -300,
 			},{
 				opacity: 1,
 				x: 0,
-			},'-=0')
+			},'-=.5')
 			;
 
 			listenToScrollEvent();

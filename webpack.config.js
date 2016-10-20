@@ -115,7 +115,7 @@ const config = {
 		module: {
 			loaders: [
 				loaders.babel,
-				loaders.strip,				
+				//loaders.strip,				
 			]
 		},
 		plugins: [  

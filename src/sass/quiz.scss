@@ -51,10 +51,10 @@
 
 		&--question{
 			
-			padding: 55px 240px 50px;
+			padding: 55px 200px 30px 180px;
 			
 			&:before{
-				left: 10px;
+				//left: 10px;
 			}
 
 			&:after{
@@ -168,7 +168,7 @@
 .quiz-question{
 
 	&__pers{
-		background: #fff url(../images/quiz/boy.png) 50% 0 no-repeat;
+		background: #fff url(../images/quiz/boy.png) 35% 0 no-repeat;
 		height: image-height('../assets/images/quiz/boy.png');
 
 		position: relative;

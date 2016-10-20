@@ -30,8 +30,13 @@ export default function(){
 		
 		$('.js-goto').on('click', function(e){
 			//const paddingTop = $(window).width() > maxWidth ? $menu.outerHeight() : 0;
+			
+			const href = this.href || this.getAttribute('data-href');
+			if (!href){
+				return;
+			}
 			const paddingTop = $menu.outerHeight();// + $header.outerHeight();
-			const $target = $(this.href.replace( /^.*\#/, '#' ) );
+			const $target = $(href.replace( /^.*\#/, '#' ) );
 			const speed = $(this).data('speed') ? $(this).data('speed') : 500;
 			
 			if ($target.length === 1) {
@@ -87,7 +92,7 @@ export default function(){
 				var rectTop = Math.round(rect.top);
 				var rectBottom = Math.round(rect.bottom);
 
-				if (rectTop <= 60 //&& rectBottom / 2 <= winHeight 
+				if (rectTop <= 70 //&& rectBottom / 2 <= winHeight 
 					){
 					$menuHrefs.removeClass('active');
 					$menuHrefs.filter('[href*="' + sectionId + '"]').addClass('active');

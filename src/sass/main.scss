@@ -247,11 +247,18 @@
 		vertical-align: top;
 		width: 22.5%;
 		margin: 0 1% 30px;
+		font-size: 18px;
 		
 		&:before{
 			content: '';
 			display: block;
 			margin: 0 auto 20px;
+		}
+
+		&:hover{
+			.why__item-text{
+				border-color: inherit;
+			}
 		}
 	
 		&--1:before{
@@ -284,6 +291,16 @@
 	
 		&--8:before{
 			@include sprite($why-8);
+		}
+	}
+
+	&__item-text{
+		transition: all .2s;
+		line-height: 1.4;
+		border-bottom: 1px solid transparent;
+
+		&--self{
+			border-bottom: 1px dotted transparent;
 		}
 	}
 
