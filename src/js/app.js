@@ -351,42 +351,205 @@ export default function(){
      		},
 		});
 
-		// $nexts.on('click', function(e){
-		// 	e.preventDefault();
+	}
 
-		// 	console.log('next');
 
-		// 	//$readBook.turn('next');
-		// })
-
-		// $prevs.on('click', function(e){
-		// 	e.preventDefault();
-
-		// 	console.log('previous');
-
-		// 	//$readBook.turn('previous');
-		// })
-
+	function sendGa(title, action){
+		console.log('ga',title, action);
+		if (typeof ga === 'function'){
+			ga('send', 'event', title, action);
+		}
 	}
 
 	function adRiverSend(label){
 
-		console.log(label);
+		console.log('adriver', label);
 
 		if (typeof ar_sendPixel === 'function'){
 			ar_sendPixel( label );
 		}
 
+		// switch(label){
+
+		// 	case 'button_47': 
+		// 		sendGa('меню_КН_дети', 'увидишь');
+		// 		break;
+
+		// 	case 'button_48': 
+		// 		sendGa('меню_КН_дети', 'посчитать');
+		// 		break;
+
+		// 	case 'button_49': 
+		// 		sendGa('меню_КН_дети', 'удивительные');
+		// 		break;
+
+		// 	case 'button_50': 
+		// 		sendGa('меню_КН_дети', 'питьевой_режим');
+		// 		break;
+
+		// 	case 'button_51': 
+		// 		sendGa('Меню_видео_КН', 'видео-меню');
+		// 		break;
+
+		// 	case 'button_1': 
+		// 	case 'button_62': 
+		// 		sendGa('видео_КН-ПР', 'газировка');
+		// 		break;
+
+		// 	case 'button_2': 
+		// 	case 'button_61': 
+		// 		sendGa('видео_КН-ПР', 'цветы');
+		// 		break;
+
+		// 	case 'button_3': 
+		// 		sendGa('видео_КН-ПР', 'рассуждают');
+		// 		break;
+
+		// 	case 'button_52': 
+		// 		sendGa('Меню_тест_КН', 'пройди-тест');
+		// 		break;
+
+		// 	case 'button_4': 
+		// 		sendGa('тест_КН', 'узнай_сколько');
+		// 		break;
+
+		// 	case 'button_7': 
+		// 		sendGa('тест_КН', 'результат');
+		// 		break;
+
+		// 	case 'button_53': 
+		// 		sendGa('Меню-инфогр_КН', 'инфгрф-меню-дети');
+		// 		break;
+
+		// 	case 'button_17': 
+		// 		sendGa('Меню-герой-КН', 'герой-меню');
+		// 		break;
+
+		// 	case 'button_17': 
+		// 		sendGa('Меню-герой-КН', 'герой-меню');
+		// 		break;
+
+		// 	case 'button_56': 
+		// 		sendGa('меню_КН_взросл', 'важность');
+		// 		break;
+
+		// 	case 'button_57': 
+		// 		sendGa('меню_КН_взросл', 'диетолог');
+		// 		break;
+
+		// 	case 'button_58': 
+		// 		sendGa('меню_КН_взросл', 'водный-баланс');
+		// 		break;
+
+		// 	case 'button_59': 
+		// 		sendGa('меню_КН_взросл', 'видеоролики');
+		// 		break;
+
+		// 	case 'button_60': 
+		// 		sendGa('Статья_Взросл-вода_КН', 'меню-статьи');
+		// 		break;
+
+		// 	case 'button_63': 
+		// 		sendGa('Взросл-кальк_КН', 'рассчитать');
+		// 		break;
+
+		// 	case 'button_64': 
+		// 		sendGa('Взросл-инфогр_КН', 'рассчитать');
+		// 		break;
+
+		// 	case 'button_65': 
+		// 		sendGa('Взросл-кальк_КН', 'рассчитать');
+		// 		break;
+
+
+		// }
+
 	}
 
 	function adriver(){
 		const $links = $('[data-adriver]');
+		const $linksGa = $('[data-ga]');
 
 
 		$links.on('click', function(e){
+			
+			const label = $(this).data('adriver');
 
-			console.log(e.target);
-			adRiverSend( $(this).data('adriver') );
+			if (label){
+				e.stopPropagation();
+				adRiverSend( label );
+			}			
+		
+		});
+
+		$linksGa.on('click', function(e){
+			
+			const id = parseInt($(this).data('ga'));
+
+			switch (id){
+				case 1: 
+					sendGa('Видео-ВЗР', 'КН- дети рассуждают о воде');
+					break;
+				case 2: 
+					sendGa('Видео-ВЗР', 'КН- что будет если вскипятить газировку?');
+					break;
+				case 3: 
+					sendGa('Видео-ВЗР', 'КН-выживут ли цветы в газировке?');
+					break;
+				case 4: 
+					sendGa('Видео-Дети', 'КН- дети рассуждают о воде');
+					break;
+				case 5: 
+					sendGa('Видео-Дети', 'КН- что будет если вскипятить газировку?');
+					break;
+				case 6: 
+					sendGa('Видео-Дети', 'КН-выживут ли цветы в газировке?');
+					break;
+				case 7: 
+					sendGa('Выбери свой Спортик-Дети', 'КН- Назад');
+					break;
+				case 8: 
+					sendGa('Инфографика- ВЗР-10Причин', 'КН- Закрыть');
+					break;
+				case 9: 
+					sendGa('Инфографика- ВЗР-10Причин', 'КН-Почитать');
+					break;
+				case 10: 
+					sendGa('Инфографика- Дети-Как вода помогает нам', 'КН-Узнать');
+					break;
+				case 11: 
+					sendGa('Меню- ВЗР', 'О продукте');
+					break;
+				case 12: 
+					sendGa('Меню- Дети', 'Выбери своего героя');
+					break;
+				case 13: 
+					sendGa('Меню- Дети', 'Твой Спортик');
+					break;
+				case 14: 
+					sendGa('Питьевой режим- ВЗР', 'КН- составить питьевой режим');
+					break;
+				case 15: 
+					sendGa('Статья-ВЗР', 'Почему важно употреблять именно воду?');
+					break;
+				case 16: 
+					sendGa('Статья-ВЗР', 'Как отучить ребёнка от газировки?');
+					break;
+				case 17: 
+					sendGa('Статья-ВЗР', 'Как приучить ребёнка пить воду?');
+					break;
+				case 18: 
+					sendGa('Тест- Дети', 'КН- Пройти еще раз');
+					break;
+				case 19: 
+					sendGa('Тест- Дети', 'КН- Сколько воды Тебе нужно?');
+					break;
+				case 20: 
+					sendGa('Тест- Дети', 'КН- Узнать');
+					break;
+				
+				
+			}			
 		
 		});
 
@@ -421,7 +584,6 @@ export default function(){
 
 		scrollMeTo();
 		menu();
-		//form();
 		modals();
 
 		important();
