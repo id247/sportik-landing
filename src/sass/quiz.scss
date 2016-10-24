@@ -20,7 +20,7 @@
 	&__box{
 		margin: 0 auto;
 		background: #fff;
-		padding: 85px 125px;
+		padding: 85px 125px 85px 195px;
 		width: 896px;
 		border-radius: 5px;
 		position: relative;
@@ -39,8 +39,8 @@
 
 		&:before{
 			content: url(../images/quiz/bottle.png);
-			bottom: -50px;
-			left: -115px;	
+			bottom: 10px;
+			left: -5px;	
 		}
 
 		&:after{
