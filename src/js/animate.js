@@ -121,7 +121,7 @@ export default function(){
 			    return Math.round(value * Math.pow(10, place)) / Math.pow(10, place);
 			}
 
-			$box.css('padding-top', maxScroll + 500 + 'px');
+			$box.css('padding-top', maxScroll + 900 + 'px');
 
 
 			tl1

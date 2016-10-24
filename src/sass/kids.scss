@@ -7,7 +7,7 @@
 	padding: 170px 0 0;
 	position: relative;
 
-	background: url(../images/bg/skate.png) 50% 0 no-repeat;
+	background: url(../images/bg/skate.png) 50% 0 repeat-x;
 	min-height: 750px;
 
 	&__content{
@@ -97,7 +97,7 @@
  * ========================================================================== */
 
 .water-helps{
-	background: #55c5f1 url(../images/bg/water-helps.png) 50% 0 no-repeat;
+	background: #55c5f1 url(../images/bg/water-helps.png) 50% 0 repeat-x;
 	color: #fff;
 	padding: 330px 0 150px;
 	text-align: center;
@@ -128,7 +128,7 @@
 	&:before{
 		content: '';
 		display: block;
-		background: url(../images/bg/water-helps-waves.png) 50% 0 no-repeat;
+		background: url(../images/bg/water-helps-waves.png) 50% 0 repeat-x;
 		height: image-height('../assets/images/bg/water-helps-waves.png');
 		margin: 0 0 120px;
 	}
@@ -338,6 +338,7 @@
 	}
 
 	&__back{
+		font-size: 20px;
 		border-bottom-style: dotted; 
 	}
 
