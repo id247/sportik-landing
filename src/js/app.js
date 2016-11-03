@@ -486,6 +486,8 @@ export default function(){
 			
 			const id = parseInt($(this).data('ga'));
 
+			console.log('ga click', id);
+
 			switch (id){
 				case 1: 
 					sendGa('Видео-ВЗР', 'КН- дети рассуждают о воде');
