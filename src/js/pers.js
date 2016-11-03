@@ -86,9 +86,6 @@ export default function(){
 				if (typeof ar_sendPixel === 'function'){
 					ar_sendPixel( 'button_55' );
 				}
-				if (typeof ga === 'function'){
-					ga('send', 'event', 'Меню-герой-КН', 'герой-меню');
-				}
 
 				$html.addClass('html--modal');
 				$modalPers.addClass('modal--visible');
