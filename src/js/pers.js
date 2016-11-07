@@ -41,6 +41,7 @@ export default function(){
 
 		Cookie.set(PromoOptions.cookieName, data, { 
 			domain: PromoOptions.cookieDomain, 
+			expires: 365,
 			path: '/'
 		});		
 	}
