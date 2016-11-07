@@ -400,7 +400,11 @@ export default function(){
 			
 			const $this = $(this);
 			const id = parseInt($this.data('ga'));
-			const href = this.href;
+			let href = this.href;
+
+			if (href.indexOf('youtube') > -1){
+				href = false;
+			}
 
 			if (href){
 				e.preventDefault();
