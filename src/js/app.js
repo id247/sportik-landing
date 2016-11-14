@@ -402,7 +402,7 @@ export default function(){
 			const id = parseInt($this.data('ga'));
 			let href = this.href;
 
-			if (href.indexOf('youtube') > -1){
+			if (href && href.indexOf('youtube') > -1){
 				href = false;
 			}
 
