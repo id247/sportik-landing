@@ -1,7 +1,16 @@
+if (server !== "mosreg"){
 @@include("./common/head.html", {
 	"title": "Сколько воды в день нужно пить вашему ребенку",
 	"htmlMod": " "
 })
+}
+
+if (server === "mosreg"){
+@@include("./common/head.html", {
+	"title": "Сколько воды нужно пить?",
+	"htmlMod": " "
+})
+}
 			
 			@@include("./common/header.html", {
 				"role": "parents"

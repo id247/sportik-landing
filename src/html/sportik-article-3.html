@@ -13,8 +13,9 @@
 
 			@@include("./pages/article-3.html", {})
 
-
+			@@if (server !== "mosreg"){ 
 			@@include("./sections/comments.html", {})
+			}
 
 
 @@include("./common/foot.html", {

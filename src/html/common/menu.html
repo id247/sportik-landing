@@ -6,9 +6,11 @@
 			
 			<ul class="menu__list">
 				
+				@@if (server !== "mosreg"){ 
 				<li class="menu__item">
 					<a href="https://dnevnik.ru" class="menu__href menu__href--dnevnik"></a>
 				</li>
+				}
 				
 
 				@@if (role === "parents"){ 
